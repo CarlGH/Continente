@@ -7,4 +7,4 @@ if (window.navigator.userAgent.indexOf("Android") > -1) {
 } else if (window.navigator.userAgent.indexOf("iP") > -1) {
     document.documentElement.setAttribute("operatingsystem", "iOS");
 }
-window.alert(navigator.userAgent);
+window.alert(window.navigator.userAgent.indexOf("Android") > -1);
