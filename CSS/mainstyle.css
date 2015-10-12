@@ -1,4 +1,3 @@
-@import url('//fonts.googleapis.com/css?family=Open+Sans');
 html {
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -86,10 +85,11 @@ button, :focus, :active, ::-moz-focus-inner{
 /* Conteúdo Principal */
 #main_page {
     background-color: #FFFFFF;
+    bottom: 0;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    height: 100%;
     left: 0;
     position: fixed;
+    top: 0;
     transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
