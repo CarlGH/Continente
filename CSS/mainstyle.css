@@ -1,0 +1,133 @@
+html {
+    font-family: Helvetica, Arial, sans-serif;
+}
+html[operatingSystem="Android"] {
+    font-family: "Open Sans", "Century Gothic", Garamond;
+}
+html[operatingSystem="iOS"] {
+    font-family: Optima, Helvetica, "Helvetica Neue";
+}
+body {
+    margin: 0;
+    overflow: hidden;
+}
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+/* Menu Lateral */
+#menu_area {
+    background-color: #F1F1F1;
+    height: 100%;
+    position: absolute;
+    width: 250px;
+}
+#menu_top {
+    height: 50px;
+}
+#menu_list {
+    color: #4D4D4D;
+    font-weight: 700;
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#menu_list li {
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    border-bottom: 1px solid #E7E7E7;
+    line-height: 40px;
+    margin: 0 15px;
+    padding-left: 40px;
+}
+#menu_inicio {
+    background-image: url("Imagens/menu_inicio.png");
+}
+#menu_cartao {
+    background-image: url("Imagens/menu_cartao.png");
+}
+#menu_produtos {
+    background-image: url("Imagens/menu_produtos");
+}
+#menu_listas {
+    background-image: url("Imagens/menu_listas");
+}
+#menu_receitas {
+    background-image: url("Imagens/menu_receitas");
+}
+#menu_folhetos {
+    background-image: url("Imagens/menu_folhetos");
+}
+#menu_notificacoes {
+    background-image: url("Imagens/menu_notificacoes");
+}
+#menu_lojas {
+    background-image: url("Imagens/menu_lojas");
+}
+#menu_entrar {
+    background-image: url("Imagens/menu_entrar");
+}
+#menu_preferencias {
+    background-image: url("Imagens/menu_preferencias");
+}
+/* Conteúdo Principal */
+#main_page {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    transform: translateZ(0);
+    transition: left .5s ease;
+    width: 100%;
+}
+#main_page.show {
+    left: 250px;
+}
+#top_area {
+    background-color: #DC191F;
+    height: 50px;
+    position: relative;
+}
+#menu_button {
+    background-image: url("Imagens/botao%20menu.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+#page_title {
+    color: #FFFFFF;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 50px;
+    overflow: hidden;
+    padding-left: 5px;
+}
+#search_button {
+    background-image: url("Imagens/pesquisar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    height: 50px;
+    width: 50px;
+}
+#search_field {
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    bottom: 7px;
+    display: none;
+    left: 57px;
+    overflow: hidden;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+/* Night Mode */
+.night_mode #menu_area {
+    background-color: #121314;
+}
