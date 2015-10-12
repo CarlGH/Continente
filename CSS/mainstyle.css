@@ -97,10 +97,10 @@ button, :focus, :active, ::-moz-focus-inner{
     -moz-transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     transition: transform .5s ease;
-    -o-transition: transform .5s ease;
-    -ms-transition: transform .5s ease;
-    -moz-transition: transform .5s ease;
-    -webkit-transition: transform .5s ease;
+    -o-transition: -o-transform .5s ease;
+    -ms-transition: -ms-transform .5s ease;
+    -moz-transition: -moz-transform .5s ease;
+    -webkit-transition: -webkit-transform .5s ease;
     width: 100%;
 }
 #main_page.show {

@@ -3,7 +3,7 @@ function toggleMenu() {
 }
 
 if (navigator.userAgent.indexOf("Android") > -1) {
-    document.documentElement.setAttribute("operatingSystem", "Android");
+    document.documentElement.setAttribute("operatingystem", "Android");
 } else if (navigator.userAgent.indexOf("iP") > -1) {
-    document.documentElement.setAttribute("operatingSystem", "iOS");
+    document.documentElement.setAttribute("operatingystem", "iOS");
 }
