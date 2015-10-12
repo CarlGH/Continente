@@ -26,6 +26,14 @@ button, :focus, :active, ::-moz-focus-inner{
     -webkit-tap-highlight-color: transparent;
     -webkit-user-modify: read-write-plaintext-only;
 }
+img {
+    image-rendering: optimizeSpeed;
+    image-rendering: optimize-contrast;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
 /* Menu Lateral */
 #menu_area {
     background-color: #F1F1F1;
