@@ -1,15 +1,15 @@
 html {
     font-family: Quicksand, Helvetica, Arial, sans-serif;
 }
-html[operatingsystem="Android"] {
-    font-family: Quicksand, "Open Sans", "Century Gothic", Garamond;
-}
-html[operatingsystem="iOS"] {
-    font-family: Quicksand, Optima, Helvetica, "Helvetica Neue";
-}
 body {
     margin: 0;
     overflow: hidden;
+}
+body[operatingsystem="Android"] {
+    font-family: Quicksand, "Open Sans", "Century Gothic", Garamond;
+}
+body[operatingsystem="iOS"] {
+    font-family: Quicksand, Optima, Helvetica, "Helvetica Neue";
 }
 button {
     background: none;

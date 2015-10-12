@@ -6,10 +6,10 @@ function toggleMenu() {
 
 if (window.navigator.userAgent.indexOf("Android") > -1) {
 
-    document.documentElement.setAttribute("operatingsystem", "Android");
+    document.body.setAttribute("operatingsystem", "Android");
 
 } else if (window.navigator.userAgent.indexOf("iP") > -1) {
 
-    document.documentElement.setAttribute("operatingsystem", "iOS");
+    document.body.setAttribute("operatingsystem", "iOS");
 
 }
