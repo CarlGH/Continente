@@ -48,12 +48,6 @@ button, :focus, :active, ::-moz-focus-inner{
     background-repeat: no-repeat;
     background-position: 10px center;
     border-bottom: 1px solid #E7E7E7;
-    image-rendering: optimizeSpeed;
-    image-rendering: optimize-contrast;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    -ms-interpolation-mode: nearest-neighbor;
     line-height: 40px;
     margin: 0 15px;
     padding-left: 40px;
