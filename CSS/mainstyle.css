@@ -180,6 +180,16 @@ button, :focus, :active, ::-moz-focus-inner{
     border-radius: 5px;
     height: 120px;
     margin: 30px 10px;
+    overflow: hidden;
+}
+.large_banner img{
+    height: 100%;
+    transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    margin-left: 50%;
 }
 /* Night Mode */
 .night_mode #menu_area {
