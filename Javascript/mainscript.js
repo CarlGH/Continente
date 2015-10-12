@@ -2,8 +2,8 @@ function toggleMenu() {
     document.getElementById("main_page").classList.toggle("show");
 }
 
-if (navigator.platform === "Android") {
+if (navigator.userAgent.indexOf("Android") > -1) {
     document.documentElement.setAttribute("operatingSystem", "Android");
-} else if (navigator.platform.indexOf("iP") === 0) {
+} else if (navigator.userAgent.indexOf("iP") > -1) {
     document.documentElement.setAttribute("operatingSystem", "iOS");
 }
