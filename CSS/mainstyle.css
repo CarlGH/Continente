@@ -47,6 +47,7 @@ button, :focus, :active, ::-moz-focus-inner{
 #menu_list li {
     background-repeat: no-repeat;
     background-position: 10px center;
+    background-size: 20px;
     border-bottom: 1px solid #E7E7E7;
     line-height: 40px;
     margin: 0 15px;
