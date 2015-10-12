@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 300;
@@ -18,13 +18,13 @@
   font-weight: 700;
   src: local("Quicksand Bold"), local("Quicksand-Bold"), url(../Font/quicksand_bold.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
+}*/
 html {
-    font-family: "Quicksand", "Open Sans", Optima, Helvetica, Arial, sans-serif;
+    /*font-family: "Quicksand", "Open Sans", Optima, Helvetica, Arial, sans-serif;*/
+    font-family: "Optima", "Open Sans", Helvetica, Arial, sans-serif;
 }
 body {
     margin: 0;
-    overflow: hidden;
 }
 button {
     background: none;
@@ -146,6 +146,7 @@ button, :focus, :active, ::-moz-focus-inner{
     line-height: 50px;
     overflow: hidden;
     padding-left: 5px;
+    text-align: center;
 }
 #search_button {
     background-image: url(../Imagens/pesquisar.png);
@@ -166,6 +167,19 @@ button, :focus, :active, ::-moz-focus-inner{
     position: absolute;
     top: 7px;
     right: 7px;
+}
+#middle_area {
+    bottom: 0;
+    overflow: auto;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+}
+.large_banner {
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    height: 120px;
+    margin: 30px 10px;
 }
 /* Night Mode */
 .night_mode #menu_area {
