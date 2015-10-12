@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Quicksand Regular'), local('Quicksand-Regular'), url(../Font/quicksand.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 html {
     font-family: Quicksand, Helvetica, Arial, sans-serif;
 }
@@ -54,34 +62,34 @@ button, :focus, :active, ::-moz-focus-inner{
     padding-left: 40px;
 }
 #menu_inicio {
-    background-image: url("../Imagens/menu_inicio.png");
+    background-image: url(../Imagens/menu_inicio.png);
 }
 #menu_cartao {
-    background-image: url("../Imagens/menu_cartao.png");
+    background-image: url(../Imagens/menu_cartao.png);
 }
 #menu_produtos {
-    background-image: url("../Imagens/menu_produtos");
+    background-image: url(../Imagens/menu_produtos);
 }
 #menu_listas {
-    background-image: url("../Imagens/menu_listas");
+    background-image: url(../Imagens/menu_listas);
 }
 #menu_receitas {
-    background-image: url("../Imagens/menu_receitas");
+    background-image: url(../Imagens/menu_receitas);
 }
 #menu_folhetos {
-    background-image: url("../Imagens/menu_folhetos");
+    background-image: url(../Imagens/menu_folhetos);
 }
 #menu_notificacoes {
-    background-image: url("../Imagens/menu_notificacoes");
+    background-image: url(../Imagens/menu_notificacoes);
 }
 #menu_lojas {
-    background-image: url("../Imagens/menu_lojas");
+    background-image: url(../Imagens/menu_lojas);
 }
 #menu_entrar {
-    background-image: url("../Imagens/menu_entrar");
+    background-image: url(../Imagens/menu_entrar);
 }
 #menu_preferencias {
-    background-image: url("../Imagens/menu_preferencias");
+    background-image: url(../Imagens/menu_preferencias);
 }
 /* Conteúdo Principal */
 #main_page {
@@ -116,7 +124,7 @@ button, :focus, :active, ::-moz-focus-inner{
     position: relative;
 }
 #menu_button {
-    background-image: url("../Imagens/botao%20menu.png");
+    background-image: url(../Imagens/botao%20menu.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
@@ -133,7 +141,7 @@ button, :focus, :active, ::-moz-focus-inner{
     padding-left: 5px;
 }
 #search_button {
-    background-image: url("../Imagens/pesquisar.png");
+    background-image: url(../Imagens/pesquisar.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
