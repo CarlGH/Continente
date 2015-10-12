@@ -5,10 +5,10 @@ body {
     margin: 0;
     overflow: hidden;
 }
-body[operatingsystem="Android"] {
+body.Android {
     font-family: Quicksand, "Open Sans", "Century Gothic", Garamond;
 }
-body[operatingsystem="iOS"] {
+body.iOS {
     font-family: Quicksand, Optima, Helvetica, "Helvetica Neue";
 }
 button {
