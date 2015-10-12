@@ -117,8 +117,9 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 #menu_button {
     background-image: url("../Imagens/botao%20menu.png");
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
     float: left;
     height: 50px;
     width: 50px;
@@ -133,8 +134,9 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 #search_button {
     background-image: url("../Imagens/pesquisar.png");
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
     float: right;
     height: 50px;
     width: 50px;
