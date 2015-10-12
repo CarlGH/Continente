@@ -17,12 +17,8 @@ button {
     border: none;
     background: none;
 }
-input::-moz-focus-inner {
-    border: 0;
-}
-:active, :focus {
+:focus, :active, ::-moz-focus-inner{
     outline: none;
-    outline: 0;
 }
 /* Menu Lateral */
 #menu_area {
