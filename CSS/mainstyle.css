@@ -18,7 +18,8 @@ button {
     background: none;
 }
 :focus, :active, ::-moz-focus-inner{
-    outline: none;
+    border: none;
+    outline: 0;
 }
 /* Menu Lateral */
 #menu_area {
