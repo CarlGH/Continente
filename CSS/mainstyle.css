@@ -52,6 +52,7 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 #top_area {
     background-color: #DC191F;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     height: 50px;
     position: relative;
 }
@@ -88,6 +89,7 @@ button, :focus, :active, ::-moz-focus-inner{
     display: none;
     left: 57px;
     overflow: hidden;
+    perspective: 1px; /* Previne problema da border-radius com Chrome Android */
     position: absolute;
     top: 7px;
     right: 7px;
