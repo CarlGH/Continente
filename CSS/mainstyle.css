@@ -41,89 +41,14 @@ button, :focus, :active, ::-moz-focus-inner{
     -webkit-tap-highlight-color: transparent;
     -webkit-user-modify: read-write-plaintext-only;
 }
-/* Menu Lateral */
-#menu_area {
-    background-color: #F1F1F1;
-    height: 100%;
-    position: absolute;
-    width: 250px;
-}
-#menu_top {
-    height: 50px;
-}
-#menu_list {
-    color: #4D4D4D;
-    font-weight: 700;
-    font-size: 14px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-#menu_list li {
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 20px;
-    border-bottom: 1px solid #E7E7E7;
-    line-height: 40px;
-    margin: 0 15px;
-    padding-left: 40px;
-}
-#menu_inicio {
-    background-image: url(../Imagens/menu_inicio.png);
-}
-#menu_cartao {
-    background-image: url(../Imagens/menu_cartao.png);
-}
-#menu_produtos {
-    background-image: url(../Imagens/menu_produtos);
-}
-#menu_listas {
-    background-image: url(../Imagens/menu_listas);
-}
-#menu_receitas {
-    background-image: url(../Imagens/menu_receitas);
-}
-#menu_folhetos {
-    background-image: url(../Imagens/menu_folhetos);
-}
-#menu_notificacoes {
-    background-image: url(../Imagens/menu_notificacoes);
-}
-#menu_lojas {
-    background-image: url(../Imagens/menu_lojas);
-}
-#menu_entrar {
-    background-image: url(../Imagens/menu_entrar);
-}
-#menu_preferencias {
-    background-image: url(../Imagens/menu_preferencias);
-}
 /* Conteúdo Principal */
 #main_page {
     background-color: #FFFFFF;
     bottom: 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     left: 0;
     position: fixed;
     top: 0;
-    transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    transition: transform .5s ease;
-    -o-transition: -o-transform .5s ease;
-    -ms-transition: -ms-transform .5s ease;
-    -moz-transition: -moz-transform .5s ease;
-    -webkit-transition: -webkit-transform .5s ease;
     width: 100%;
-}
-#main_page.show {
-    transform: translate3d(250px, 0, 0);
-    -o-transform: translate3d(250px, 0, 0);
-    -ms-transform: translate3d(250px, 0, 0);
-    -moz-transform: translate3d(250px, 0, 0);
-    -webkit-transform: translate3d(250px, 0, 0);
 }
 #top_area {
     background-color: #DC191F;
@@ -145,7 +70,6 @@ button, :focus, :active, ::-moz-focus-inner{
     letter-spacing: 2px;
     line-height: 50px;
     overflow: hidden;
-    padding-left: 5px;
     text-align: center;
 }
 #search_button {
@@ -184,12 +108,117 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 .large_banner img{
     height: 100%;
-    transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
+            transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     margin-left: 50%;
+}
+/* Menu Lateral */
+#menu_area_background {
+    background: #000000;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+            transition: opacity 0.5s ease, z-index 0s linear 0.5s;
+         -o-transition: opacity 0.5s ease, z-index 0s linear 0.5s;
+        -ms-transition: opacity 0.5s ease, z-index 0s linear 0.5s;
+       -moz-transition: opacity 0.5s ease, z-index 0s linear 0.5s;
+    -webkit-transition: opacity 0.5s ease, z-index 0s linear 0.5s;
+    width: 100%;
+    z-index: -1;
+}
+.show #menu_area_background {
+    opacity: 0.8;
+            transition: opacity 0.5s ease;
+         -o-transition: opacity 0.5s ease;
+        -ms-transition: opacity 0.5s ease;
+       -moz-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    z-index: 0;
+}
+#menu_area {
+    background-color: #F1F1F1;
+    bottom: 0;
+    position: fixed;
+    top: 50px;
+            transform: translate3d(-250px, 0, 0);
+         -o-transform: translate3d(-250px, 0, 0);
+        -ms-transform: translate3d(-250px, 0, 0);
+       -moz-transform: translate3d(-250px, 0, 0);
+    -webkit-transform: translate3d(-250px, 0, 0);
+            transition: transform 0.5s ease;
+         -o-transition: -o-transform 0.5s ease;
+        -ms-transition: -ms-transform 0.5s ease;
+       -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    width: 250px;
+}
+.show #menu_area {
+            transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+#menu_bottom {
+    bottom: 0;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+}
+#menu_list {
+    color: #4D4D4D;
+    font-weight: 700;
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    bottom: 50px;
+    overflow: auto;
+    width: 100%;
+}
+#menu_list li {
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 20px;
+    border-bottom: 1px solid #E7E7E7;
+    line-height: 40px;
+    margin: 0 5px;
+    padding-left: 40px;
+}
+#menu_inicio {
+    background-image: url(../Imagens/menu_inicio.png);
+}
+#menu_cartao {
+    background-image: url(../Imagens/menu_cartao.png);
+}
+#menu_produtos {
+    background-image: url(../Imagens/menu_produtos);
+}
+#menu_listas {
+    background-image: url(../Imagens/menu_listas);
+}
+#menu_receitas {
+    background-image: url(../Imagens/menu_receitas);
+}
+#menu_folhetos {
+    background-image: url(../Imagens/menu_folhetos);
+}
+#menu_notificacoes {
+    background-image: url(../Imagens/menu_notificacoes);
+}
+#menu_lojas {
+    background-image: url(../Imagens/menu_lojas);
+}
+#menu_entrar {
+    background-image: url(../Imagens/menu_entrar);
+}
+#menu_preferencias {
+    background-image: url(../Imagens/menu_preferencias);
 }
 /* Night Mode */
 .night_mode #menu_area {
