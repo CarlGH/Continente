@@ -183,6 +183,9 @@ button, :focus, :active, ::-moz-focus-inner{
     overflow: auto;
     width: 100%;
 }
+#menu_list input {
+    display: none;
+}
 #menu_list li {
     background-repeat: no-repeat;
     background-position: 10px center;
