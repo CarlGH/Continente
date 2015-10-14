@@ -96,7 +96,7 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 #middle_area {
     bottom: 0;
-    overflow: auto;
+    overflow: scroll;
     position: absolute;
     top: 50px;
     width: 100%;
@@ -191,7 +191,7 @@ button, :focus, :active, ::-moz-focus-inner{
     position: fixed;
     top: 0;
     bottom: 50px;
-    overflow: auto;
+    overflow: scroll;
     width: 100%;
 }
 #menu_lista li {
