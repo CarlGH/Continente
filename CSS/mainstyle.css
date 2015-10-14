@@ -89,7 +89,6 @@ button, :focus, :active, ::-moz-focus-inner{
     display: none;
     left: 57px;
     overflow: hidden;
-    perspective: 1px; /* Previne problema da border-radius com Chrome Android */
     position: absolute;
     top: 7px;
     right: 7px;
@@ -102,12 +101,12 @@ button, :focus, :active, ::-moz-focus-inner{
     width: 100%;
 }
 .large_banner {
-    /*border: 1px solid #DDDDDD;*/
+    border: 1px solid #DDDDDD;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px #DDDDDD;
     height: 120px;
     margin: 30px 10px;
     padding-bottom: 40px;
+    perspective: 1px; /* Previne problema da border-radius com Chrome Android */
     overflow: hidden;
 }
 .large_banner img{
@@ -177,7 +176,7 @@ button, :focus, :active, ::-moz-focus-inner{
     position: absolute;
     width: 100%;
 }
-#menu_list {
+#menu_lista {
     color: #4D4D4D;
     font-weight: 700;
     font-size: 14px;
@@ -190,10 +189,7 @@ button, :focus, :active, ::-moz-focus-inner{
     overflow: auto;
     width: 100%;
 }
-/*#menu_list input {
-    display: none;
-}*/
-#menu_list li {
+#menu_lista li {
     background-repeat: no-repeat;
     background-position: 10px center;
     background-size: 20px;
@@ -202,35 +198,42 @@ button, :focus, :active, ::-moz-focus-inner{
     margin: 0 5px;
     padding-left: 40px;
 }
-#menu_inicio {
+#menu_lista input {
+    display: none;
+}
+.inicio {
     background-image: url(../Imagens/menu_inicio.png);
 }
-#menu_cartao {
+.cartao {
     background-image: url(../Imagens/menu_cartao.png);
 }
-#menu_produtos {
-    background-image: url(../Imagens/menu_produtos);
+.produtos {
+    background-image: url(../Imagens/menu_produtos.png);
 }
-#menu_listas {
-    background-image: url(../Imagens/menu_listas);
+.listas {
+    background-image: url(../Imagens/menu_listas.png);
 }
-#menu_receitas {
-    background-image: url(../Imagens/menu_receitas);
+.receitas {
+    background-image: url(../Imagens/menu_receitas.png);
 }
-#menu_folhetos {
-    background-image: url(../Imagens/menu_folhetos);
+.folhetos {
+    background-image: url(../Imagens/menu_folhetos.png);
 }
-#menu_notificacoes {
-    background-image: url(../Imagens/menu_notificacoes);
+.notificacoes {
+    background-image: url(../Imagens/menu_notificacoes.png);
 }
-#menu_lojas {
-    background-image: url(../Imagens/menu_lojas);
+.lojas {
+    background-image: url(../Imagens/menu_lojas.png);
 }
-#menu_entrar {
-    background-image: url(../Imagens/menu_entrar);
+.entrar {
+    background-image: url(../Imagens/menu_entrar.png);
 }
-#menu_preferencias {
-    background-image: url(../Imagens/menu_preferencias);
+.preferencias {
+    background-image: url(../Imagens/menu_preferencias.png);
+}
+/* Navegação */
+#middle_area input:not(:checked) + div {
+    display: none;
 }
 /* Night Mode */
 .night_mode #menu_area {

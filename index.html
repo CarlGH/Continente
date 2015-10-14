@@ -1,102 +1,150 @@
-﻿<html>
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800">
-        <link rel="stylesheet" type="text/css" href="CSS/mainstyle.css" media="screen">
-        <script type="text/javascript" src="Javascript/mainscript.js"></script>
+        <title>Continente Web App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"/>
+        <link rel="stylesheet" type="text/css" href="CSS/mainstyle.css" media="screen"/>
     </head>
     <body>
         <div id="main_page">
 
             <div id="middle_area">
-                <div id="inicio">
+                <input type="radio" name="menu_lista" id="ativar_inicio" class="inicio"/>
+                <div name="inicio" class="middle_area_content">
                     <div class="large_banner">
-                        <img src="Exemplos/banner1.jpg">
+                        <img alt="Banner" src="Exemplos/banner1.jpg"/>
                         <div class="banner_label">Público Digital Semestral</div>
                     </div>
                     <div class="large_banner">
-                        <img src="Exemplos/banner2.jpg">
+                        <img alt="Banner" src="Exemplos/banner2.jpg"/>
                         <div class="banner_label">25% Desconto em seleção de vinhos</div>
                     </div>
                     <div class="large_banner">
-                        <img src="Exemplos/banner3.jpg">
+                        <img alt="Banner" src="Exemplos/banner3.jpg"/>
                         <div class="banner_label">Continente Magazine</div>
                     </div>
                     <div class="large_banner">
-                        <img src="Exemplos/banner4.jpg">
+                        <img alt="Banner" src="Exemplos/banner4.jpg"/>
                         <div class="banner_label">Descontos Wells</div>
                     </div>
                     <div class="large_banner">
-                        <img src="Exemplos/banner5.jpg">
+                        <img alt="Banner" src="Exemplos/banner5.jpg"/>
                         <div class="banner_label">Serviço SMS Entrega</div>
                     </div>
                     <div class="large_banner">
-                        <img src="Exemplos/banner6.jpg">
+                        <img alt="Banner" src="Exemplos/banner6.jpg"/>
                         <div class="banner_label">Até 70% de desconto em vinhos</div>
                     </div>
                     <div class="large_banner">
-                        <img src="Exemplos/banner7.jpg">
+                        <img alt="Banner" src="Exemplos/banner7.jpg"/>
                         <div class="banner_label">Continente Start APP</div>
+                    </div>
+                </div>
+
+                <input type="radio" name="menu_lista" id="ativar_cartao" class="cartao"/>
+                <div id="cartao" class="middle_area_content">
+                    <div>O seu saldo disponível em Cartão Continente é 42.23 €
+                    </div>
+                </div>
+
+                <input type="radio" name="menu_lista" id="ativar_produtos" class="produtos"/>
+                <div name="produtos" class="middle_area_content">
+                    <div>Lista de produtos
+                    </div>
+                </div>
+
+                <input type="radio" name="menu_lista" id="ativar_listas" class="listas"/>
+                <div name="listas" class="middle_area_content">
+                    <div>Listas de compras
+                    </div>
+                </div>
+
+                <input type="radio" name="menu_lista" id="ativar_receitas" class="receitas"/>
+                <div name="receitas" class="middle_area_content">
+                    <div>Receitas
+                    </div>
+                </div>
+
+                <input type="radio" name="menu_lista" id="ativar_folhetos" class="folhetos"/>
+                <div name="folhetos" class="middle_area_content">
+                    <div>Folhetos
+                    </div>
+                </div>
+
+                <input type="radio" name="menu_lista" id="ativar_notificacoes" class="notificacoes"/>
+                <div name="notificacoes" class="middle_area_content">
+                    <div>Notificacoes
+                    </div>
+                </div>
+
+                <input type="radio" name="menu_lista" id="ativar_lojas" class="lojas"/>
+                <div name="lojas" class="middle_area_content">
+                    <div>Lojas
+                    </div>
+                </div>
+
+                <input type="radio" name="menu_lista" id="ativar_entrar" class="entrar"/>
+                <div name="entrar" class="middle_area_content">
+                    <div>Entrar
+                    </div>
+                </div>
+
+                <input type="radio" name="menu_lista" id="ativar_preferencias" class="preferencias"/>
+                <div name="preferencias" class="middle_area_content">
+                    <div>Preferencias
                     </div>
                 </div>
             </div>
 
-            <div id="menu_area_background"></div>
+            <div id="menu_area_background" onclick="toggleMenu();"></div>
             <div id="menu_area">
-                <ul id="menu_list">
-                    <input type="radio" name="menu_list" id="ativar_inicio"/>
+                <ul id="menu_lista" onclick="navigateMenu(event);">
                     <label for="ativar_inicio">
-                        <li id="menu_inicio">Início</li>
+                        <li class="inicio">Início</li>
                     </label>
-                    <input type="radio" name="menu_list" id="ativar_cartao"/>
                     <label for="ativar_cartao">
-                        <li id="menu_cartao">Cartão</li>
+                        <li class="cartao">Cartão</li>
                     </label>
-                    <input type="radio" name="menu_list" id="ativar_produtos"/>
                     <label for="ativar_produtos">
-                        <li id="menu_produtos">Produtos</li>
+                        <li class="produtos">Produtos</li>
                     </label>
-                    <input type="radio" name="menu_list" id="ativar_listas"/>
                     <label for="ativar_listas">
-                        <li id="menu_produtos">Listas</li>
+                        <li class="listas">Listas</li>
                     </label>
-                    <input type="radio" name="menu_list" id="ativar_receitas"/>
                     <label for="ativar_receitas">
-                        <li id="menu_produtos">Receitas</li>
+                        <li class="receitas">Receitas</li>
                     </label>
-                    <input type="radio" name="menu_list" id="ativar_folhetos"/>
                     <label for="ativar_folhetos">
-                        <li id="menu_produtos">Folhetos</li>
+                        <li class="folhetos">Folhetos</li>
                     </label>
-                    <input type="radio" name="menu_list" id="ativar_notificacoes"/>
                     <label for="ativar_notificacoes">
-                        <li id="menu_produtos">Notificações</li>
+                        <li class="notificacoes">Notificações</li>
                     </label>
-                    <input type="radio" name="menu_list" id="ativar_lojas"/>
                     <label for="ativar_lojas">
-                        <li id="menu_produtos">Lojas</li>
+                        <li class="lojas">Lojas</li>
                     </label>
-                    <input type="radio" name="menu_list" id="ativar_entrar"/>
                     <label for="ativar_entrar">
-                        <li id="menu_produtos">Entrar</li>
+                        <li class="entrar">Entrar</li>
                     </label>
-                    <input type="radio" name="menu_list" id="ativar_preferencias"/>
                     <label for="ativar_preferencias">
-                        <li id="menu_produtos">Preferências</li>
+                        <li class="preferencias">Preferências</li>
                     </label>
-                    <li id="menu_preferencias">Preferências</li>
-                    <li id="menu_preferencias">Preferências</li>
-                    <li id="menu_preferencias">Preferências</li>
-                    <li id="menu_preferencias">Preferências</li>
-                    <li id="menu_preferencias">Preferências</li>
-                    <li id="menu_preferencias">Preferências</li>
-                    <li id="menu_preferencias">Preferências</li>
+                    <li class="Preferências1">Preferências</li>
+                    <li class="preferencias2">Preferências</li>
+                    <li class="preferencias3">Preferências</li>
+                    <li class="preferencias4">Preferências</li>
+                    <li class="preferencias5">Preferências</li>
+                    <li class="preferencias6">Preferências</li>
+                    <li class="preferencias7">Preferências</li>
+                    <li class="preferencias8">Preferências</li>
                 </ul>
                 <div id="menu_bottom">Cartão</div>
             </div>
 
             <div id="top_area">
-                <button id="menu_button" onclick="return toggleMenu();"></button>
+                <button id="menu_button" onclick="toggleMenu();"></button>
                 <button id="search_button"></button>
                 <div id="search_field"></div>
                 <div id="page_title">Início</div>
@@ -105,5 +153,6 @@
             <div id="bottom_area">
             </div>
         </div>
+        <script type="text/javascript" src="Javascript/mainscript.js"></script>
     </body>
 </html>
