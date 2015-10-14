@@ -58,10 +58,10 @@ button, :focus, :active, ::-moz-focus-inner{
     position: relative;
 }
 #menu_button {
-    background-image: url(../Imagens/botao%20menu.png);
-    background-position: center;
+    background-image: url(../Imagens/sprite.png);
+    background-position: 0 -400px;
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 50px;
     float: left;
     height: 50px;
     width: 50px;
@@ -75,10 +75,10 @@ button, :focus, :active, ::-moz-focus-inner{
     text-align: center;
 }
 #search_button {
-    background-image: url(../Imagens/pesquisar.png);
-    background-position: center;
+    background-image: url(../Imagens/sprite.png);
+    background-position: 0 -450px;
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 50px;
     float: right;
     height: 50px;
     width: 50px;
@@ -195,9 +195,9 @@ button, :focus, :active, ::-moz-focus-inner{
     width: 100%;
 }
 #menu_lista li {
+    background-image: url(../Imagens/sprite.png);
     background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 20px;
+    background-size: 50px;
     border-bottom: 1px solid #E7E7E7;
     line-height: 40px;
     margin: 0 5px;
@@ -207,34 +207,34 @@ button, :focus, :active, ::-moz-focus-inner{
     display: none;
 }
 .inicio {
-    background-image: url(../Imagens/menu_inicio.png);
+    background-position: -5px -5px;
 }
 .cartao {
-    background-image: url(../Imagens/menu_cartao.png);
+    background-position: -5px -55px;
 }
 .produtos {
-    background-image: url(../Imagens/menu_produtos.png);
+    background-position: -5px -1055px;
 }
 .listas {
-    background-image: url(../Imagens/menu_listas.png);
+    background-position: -5px -105px;
 }
 .receitas {
-    background-image: url(../Imagens/menu_receitas.png);
+    background-position: -5px -155px;
 }
 .folhetos {
-    background-image: url(../Imagens/menu_folhetos.png);
+    background-position: -5px -205px;
 }
 .notificacoes {
-    background-image: url(../Imagens/menu_notificacoes.png);
+    background-position: -5px -1055px;
 }
 .lojas {
-    background-image: url(../Imagens/menu_lojas.png);
+    background-position: -5px -255px;
 }
 .entrar {
-    background-image: url(../Imagens/menu_entrar.png);
+    background-position: -5px -305px;
 }
 .preferencias {
-    background-image: url(../Imagens/menu_preferencias.png);
+    background-position: -5px -355px;
 }
 
 /* Navegação */
