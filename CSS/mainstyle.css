@@ -102,8 +102,9 @@ button, :focus, :active, ::-moz-focus-inner{
     width: 100%;
 }
 .large_banner {
-    border: 1px solid #DDDDDD;
+    /*border: 1px solid #DDDDDD;*/
     border-radius: 5px;
+    box-shadow: 0 0 0 1px #DDDDDD;
     height: 120px;
     margin: 30px 10px;
     padding-bottom: 40px;
