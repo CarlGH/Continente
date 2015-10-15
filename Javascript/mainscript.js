@@ -9,13 +9,23 @@ function xhr(method, url, callback) {
 }
 
 function openMap(event) {
-    var mapa = document.getElementById("mapa_lojas");
-    
-    if (!mapa.src) {
-        mapa.src = "Paginas/googlemap.html";
+    var mapa = document.getElementById("mapa");
+    var lojas = document.getElementById("mapa_lojas");
+
+    if (!lojas) {
+
+        lojas = document.createElement("iframe");
+        lojas.id = "mapa_lojas";
+        lojas.src = "Paginas/googlemap.html";
+        lojas.height = "100%";
+        lojas.width = "100%";
+        lojas.setAttribute("frameborder", 0);
+        mapa.appendChild(lojas);
         console.log(event);
+
     }
-    document.getElementById("mapa").classList.toggle("show");
+
+    mapa.parentNode.classList.toggle("show");
 
 }
 

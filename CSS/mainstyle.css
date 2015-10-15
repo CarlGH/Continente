@@ -238,15 +238,19 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 
 /* Navegação */
+#middle_area > div {
+    height: 1px;
+    min-height: 100%;
+}
 #middle_area input:not(:checked) + div {
     display: none;
 }
 
 /* Lojas */
 #mapa {
-    height: 540px;
+    height: 100%;
 }
-#mapa:not(.show) {
+div:not(.show) > #mapa, .show > #botao_simples {
     display: none;
 }
 
