@@ -9,7 +9,7 @@ function navigateMenu(event) {
 
     window.location.hash = event.target.className;
     document.getElementById("page_title").textContent = event.target.textContent;
-    
+
     toggleMenu();
 
 }
@@ -30,3 +30,5 @@ function navigateHash() {
 }
 
 window.addEventListener("hashchange", navigateHash, false);
+
+navigateHash();
