@@ -250,7 +250,7 @@ button, :focus, :active, ::-moz-focus-inner{
 #mapa {
     height: 100%;
 }
-div:not(.show) > #mapa, .show > #botao_simples {
+div:not(.show) > #mapa, .show > .botao_simples {
     display: none;
 }
 
