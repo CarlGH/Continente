@@ -6,12 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
         <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"/> -->
         <link rel="stylesheet" type="text/css" href="CSS/mainstyle.css" media="screen"/>
+        <script type="text/javascript" src="Javascript/mainscript.js" async></script>
     </head>
     <body>
         <div id="main_page">
 
             <div id="middle_area">
-                <input type="radio" name="menu_lista" id="ativar_inicio" class="inicio" checked/>
+                <input type="radio" name="menu_lista" id="ativar_inicio" class="inicio"/>
                 <div name="inicio" class="middle_area_content">
                     <div class="large_banner">
                         <img alt="Banner" src="Exemplos/banner1.jpg"/>
@@ -98,7 +99,7 @@
                 </div>
             </div>
 
-            <div id="menu_area_background" onclick="toggleMenu();"></div>
+            <div id="menu_area_background" onclick="closeMenu();"></div>
             <div id="menu_area">
                 <ul id="menu_lista" onclick="navigateMenu(event);">
                     <label for="ativar_inicio">
@@ -153,6 +154,5 @@
             <div id="bottom_area">
             </div>
         </div>
-        <script type="text/javascript" src="Javascript/mainscript.js" async></script>
     </body>
 </html>

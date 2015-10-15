@@ -1,7 +1,11 @@
-
 function toggleMenu() {
 
     document.body.classList.toggle("show");
+
+}
+function closeMenu() {
+
+    document.body.classList.remove("show");
 
 }
 
@@ -10,16 +14,21 @@ function navigateMenu(event) {
     window.location.hash = event.target.className;
     document.getElementById("page_title").textContent = event.target.textContent;
 
-    toggleMenu();
-
+    closeMenu();
+console.log(event);
 }
 
 function navigateHash() {
-    var paginaActual = document.getElementById("ativar_" + window.location.hash.substring(1));
+    var paginaAtual = document.getElementById("ativar_" + window.location.hash.substring(1));
+    var menuAtual = document.querySelector("[for='ativar_" + window.location.hash.substring(1) + "']");
 
-    if (paginaActual) {
+    if (paginaAtual) {
 
-        paginaActual.checked = true;
+        paginaAtual.checked = true;
+        
+        if (menuAtual) {
+            document.getElementById("page_title").textContent = document.querySelector("[for='ativar_" + window.location.hash.substring(1) + "']").textContent;
+        }
 
     } else {
 
