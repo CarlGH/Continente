@@ -242,6 +242,14 @@ button, :focus, :active, ::-moz-focus-inner{
     display: none;
 }
 
+/* Lojas */
+#mapa {
+    height: 540px;
+}
+#mapa:not(.show) {
+    display: none;
+}
+
 /* Night Mode */
 .night_mode #menu_area {
     background-color: #121314;
