@@ -9,23 +9,8 @@ function xhr(method, url, callback) {
 }
 
 function openMap(event) {
-    /*var googleApi = document.createElement("script");
-    var googleJsApi = document.createElement("script");
-    var mapaLojas = document.createElement("script");
-
-    googleApi.setAttribute("type", "text/javascript");
-    googleApi.src = "http://maps.googleapis.com/maps/api/js?sensor=false";
-    googleJsApi.setAttribute("type", "text/javascript");
-    googleJsApi.src = "http://www.google.com/jsapi";
-    mapaLojas.setAttribute("type", "text/javascript");
-    mapaLojas.src = "Javascript/mapalojas.js";
-
-    event.parentNode.appendChild(googleApi);
-    event.parentNode.appendChild(googleJsApi);
-    event.parentNode.appendChild(mapaLojas);*/
-
-    //document.getElementById("mapa_lojas").src = "http://m.folhetos.continente.pt/lojas_fenix.html";
     var mapa = document.getElementById("mapa_lojas");
+    
     if (!mapa.src) {
         mapa.src = "Paginas/googlemap.html";
         console.log(event);
