@@ -1,4 +1,3 @@
-var paginaActual = document.getElementById("ativar_" + window.location.hash);
 
 function toggleMenu() {
 
@@ -10,18 +9,24 @@ function navigateMenu(event) {
 
     window.location.hash = event.target.className;
     document.getElementById("page_title").textContent = event.target.textContent;
+    
     toggleMenu();
 
-    console.log(event);
+}
+
+function navigateHash() {
+    var paginaActual = document.getElementById("ativar_" + window.location.hash.substring(1));
+
+    if (paginaActual) {
+
+        paginaActual.checked = true;
+
+    } else {
+
+        document.getElementById("ativar_inicio").checked = true;
+
+    }
 
 }
 
-if (paginaActual) {
-
-    paginaActual.checked = true;
-
-} else {
-
-    document.getElementById("ativar_inicio").checked = true;
-
-}
+window.addEventListener("hashchange", navigateHash, false);
