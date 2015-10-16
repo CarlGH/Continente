@@ -8,7 +8,7 @@ function lazyLoad() {
         var visible;
         var image;
         var src;
-console.info("loadImages");
+console.info("loadImages", imageList, j);
         while (j) {
             j -= 1;
             visible = imageList[j].getBoundingClientRect();
