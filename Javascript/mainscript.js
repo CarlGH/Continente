@@ -1,6 +1,4 @@
-
-
-function lazyLoad(event) {
+function lazyLoad() {
     var images = document.getElementsByTagName("img");
     var i = images.length;
     var imageList = [];
@@ -24,11 +22,11 @@ function lazyLoad(event) {
                 image = new Image();
                 image.onload = function () {
                     this.element.src = this.src;
-                    //console.log(j, this.element, this);
+                    console.log(this.element, this);
                 }
                 image.src = src;
                 image.element = imageList[j]
-                //console.log(j, src);
+                console.log(j, src);
             }
         }
 
@@ -38,7 +36,7 @@ function lazyLoad(event) {
         i -= 1;
         imageList.push(images[i]);
     }
-    console.log(imageList);
+    //console.log(imageList);
 
     document.addEventListener("touchmove", loadImages, false);
     window.addEventListener("scroll", loadImages, true);
@@ -82,6 +80,7 @@ function toggleMenu() {
     document.body.classList.toggle("show");
 
 }
+
 function closeMenu() {
 
     document.body.classList.remove("show");
