@@ -14,12 +14,6 @@ function lazyLoad(event) {
         while (j) {
             j -= 1;
             visible = imageList[j].getBoundingClientRect();
-            /*if (imageList[j].offsetWidth !== 0 &&
-                imageList[j].offsetHeight !== 0 &&
-                visible.top >= 0 &&
-                visible.left >= 0 &&
-                visible.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                visible.right <= (window.innerWidth || document.documentElement.clientWidth)) {*/
             if (imageList[j].offsetWidth !== 0 &&
                 imageList[j].offsetHeight !== 0 &&
                 visible.top <= (window.innerHeight || document.documentElement.clientHeight) &&
