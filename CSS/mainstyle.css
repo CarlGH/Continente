@@ -141,6 +141,7 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 #middle_area {
     bottom: 0;
+    font-size: 0;
     overflow-y: scroll;
     position: absolute;
     top: 50px;
@@ -155,7 +156,8 @@ button, :focus, :active, ::-moz-focus-inner{
     border-radius: 5px;
     font-size: 0px;
     height: 120px;
-    margin: 30px 10px;
+    margin: 0 auto 30px;
+    max-width: 768px;
     padding-bottom: 40px;
     perspective: 1px;          /* Previne problema da border-radius no Chrome Android */
     overflow: hidden;
@@ -290,13 +292,17 @@ button, :focus, :active, ::-moz-focus-inner{
     height: 1px;
     min-height: 100%;
 }
+#middle_area > div:not([name="lojas"]) {
+    padding: 30px 10px;
+}
 #middle_area input:not(:checked) + div {
     display: none;
 }
 .botao_simples {
     background: #FFFFFF;
     border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
     line-height: 40px;
     margin: 10px;
     text-align: center;

@@ -1,3 +1,57 @@
+
+
+function lazyLoad(event) {
+    var images = document.getElementsByTagName("img");
+    var i = images.length;
+    var imageList = [];
+
+    function loadImages() {
+        var j = imageList.length;
+        var visible;
+        var image;
+        var src;
+
+        while (j) {
+            j -= 1;
+            visible = imageList[j].getBoundingClientRect();
+            /*if (imageList[j].offsetWidth !== 0 &&
+                imageList[j].offsetHeight !== 0 &&
+                visible.top >= 0 &&
+                visible.left >= 0 &&
+                visible.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                visible.right <= (window.innerWidth || document.documentElement.clientWidth)) {*/
+            if (imageList[j].offsetWidth !== 0 &&
+                imageList[j].offsetHeight !== 0 &&
+                visible.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                visible.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+                visible.bottom >= 50 &&
+                visible.right >= 0) {
+                src = imageList[j].getAttribute("data-src");
+                image = new Image();
+                image.onload = function () {
+                    this.element.src = this.src;
+                    //console.log(j, this.element, this);
+                }
+                image.src = src;
+                image.element = imageList[j]
+                //console.log(j, src);
+            }
+        }
+
+    }
+
+    while (i) {
+        i -= 1;
+        imageList.push(images[i]);
+    }
+
+    //document.getElementById("middle_area").addEventListener("scroll", loadImages, false);
+    document.addEventListener("touchmove", loadImages, false);
+    window.addEventListener("scroll", loadImages, true);
+    window.addEventListener("hashchange", loadImages, false);
+    loadImages();
+}
+
 function xhr(method, url, callback) {
     var request = new XMLHttpRequest;
 
@@ -74,3 +128,4 @@ function navigateHash() {
 window.addEventListener("hashchange", navigateHash, false);
 
 navigateHash();
+lazyLoad();
