@@ -8,11 +8,10 @@ function lazyLoad() {
         var visible;
         var image;
         var src;
-console.info("loadImages", imageList, j);
+
         while (j) {
             j -= 1;
             visible = imageList[j].getBoundingClientRect();
-            console.info(imageList[j].offsetWidth !== 0, imageList[j].offsetHeight !== 0, visible.top <= (window.innerHeight || document.documentElement.clientHeight), visible.left <= (window.innerWidth || document.documentElement.clientWidth), visible.bottom >= 50, visible.right >= 0);
             if (imageList[j].offsetWidth !== 0 &&
                 imageList[j].offsetHeight !== 0 &&
                 visible.top <= (window.innerHeight || document.documentElement.clientHeight) &&
@@ -23,11 +22,9 @@ console.info("loadImages", imageList, j);
                 image = new Image();
                 image.onload = function () {
                     this.element.src = this.src;
-                    console.log(this.element, this);
                 }
                 image.src = src;
                 image.element = imageList[j]
-                console.log(j, src);
             }
         }
 
@@ -37,8 +34,8 @@ console.info("loadImages", imageList, j);
         i -= 1;
         imageList.push(images[i]);
     }
-    console.log(imageList);
 
+    document.addEventListener("readystatechange", loadImages, false);
     document.addEventListener("touchmove", loadImages, false);
     window.addEventListener("scroll", loadImages, true);
     window.addEventListener("hashchange", loadImages, false);
@@ -120,7 +117,6 @@ function navigateHash() {
 }
 
 window.addEventListener("hashchange", navigateHash, false);
-document.addEventListener("readystatechange", lazyLoad, false);
 
 navigateHash();
-//lazyLoad();
+lazyLoad();
