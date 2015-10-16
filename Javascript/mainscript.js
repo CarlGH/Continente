@@ -8,7 +8,7 @@ function lazyLoad() {
         var visible;
         var image;
         var src;
-
+console.info("loadImages");
         while (j) {
             j -= 1;
             visible = imageList[j].getBoundingClientRect();
@@ -36,7 +36,7 @@ function lazyLoad() {
         i -= 1;
         imageList.push(images[i]);
     }
-    //console.log(imageList);
+    console.log(imageList);
 
     document.addEventListener("touchmove", loadImages, false);
     window.addEventListener("scroll", loadImages, true);
