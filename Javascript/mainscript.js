@@ -91,7 +91,6 @@ function navigateMenu(event) {
     document.getElementById("page_title").textContent = event.target.textContent;
 
     closeMenu();
-    console.log(event);
 }
 
 function navigateHash() {
@@ -119,4 +118,4 @@ function navigateHash() {
 window.addEventListener("hashchange", navigateHash, false);
 
 navigateHash();
-lazyLoad();
+//lazyLoad();

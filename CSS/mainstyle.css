@@ -292,11 +292,11 @@ button, :focus, :active, ::-moz-focus-inner{
     height: 1px;
     min-height: 100%;
 }
-#middle_area > div:not(.scrollfix) {
-    padding: 30px 10px;
-}
-.scrollfix {
+#middle_area > div:not(.scroll) {
     overflow: auto;
+}
+.scroll {
+    padding: 30px 10px;
 }
 #middle_area input:not(:checked) + div {
     display: none;
