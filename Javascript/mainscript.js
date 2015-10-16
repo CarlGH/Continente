@@ -12,6 +12,7 @@ console.info("loadImages", imageList, j);
         while (j) {
             j -= 1;
             visible = imageList[j].getBoundingClientRect();
+            console.info(imageList[j].offsetWidth !== 0, imageList[j].offsetHeight !== 0, visible.top <= (window.innerHeight || document.documentElement.clientHeight), visible.left <= (window.innerWidth || document.documentElement.clientWidth), visible.bottom >= 50, visible.right >= 0);
             if (imageList[j].offsetWidth !== 0 &&
                 imageList[j].offsetHeight !== 0 &&
                 visible.top <= (window.innerHeight || document.documentElement.clientHeight) &&
@@ -119,6 +120,7 @@ function navigateHash() {
 }
 
 window.addEventListener("hashchange", navigateHash, false);
+document.addEventListener("readystatechange", lazyLoad, false);
 
 navigateHash();
-lazyLoad();
+//lazyLoad();
