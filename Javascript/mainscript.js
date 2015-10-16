@@ -25,7 +25,7 @@ function openMap(event) {
 
     }
 
-    mapa.parentNode.classList.toggle("show");
+    mapa.classList.toggle("show");
 
 }
 

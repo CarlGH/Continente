@@ -133,6 +133,52 @@
             margin: 8px auto 8px auto;
             border-top: 1px dashed #999
         }
+
+        #opcoes_mapa {
+            bottom: 50px;
+            font-size: 0;
+            margin: 0 auto;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+
+        #direcoes_mapa, #fechar_mapa {
+            background-clip: padding-box;
+            background-color: #FFFFFF;
+            border-left: 0;
+            box-shadow: rgba(0, 0, 0, 0.298039) 0 1px 4px -1px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 11px;
+            overflow: hidden;
+            padding: 11px;
+            position: relative;
+            text-align: center;
+            -webkit-user-select: none;
+            -webkit-background-clip: padding-box;
+        }
+
+        #direcoes_mapa:hover, #fechar_mapa:hover {
+            background-color: #EBEBEB;
+            color: #000;
+        }
+
+        #direcoes_mapa {
+            border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+            color: #000000;
+            font-weight: 500;
+            min-width: 26px;
+        }
+
+        #fechar_mapa {
+            border-bottom-right-radius: 2px;
+            border-top-right-radius: 2px;
+            color: #565656;
+            min-width: 35px;
+        }
     </style>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=pt-PT"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
@@ -178,7 +224,6 @@
 
             for (s = 0; s < store.length; s++) {
                 var latlng = new google.maps.LatLng(store[s][0], store[s][1]);
-
                 var contacts = "";
                 if (store[s][4] != "" && store[s][4] != " ") {
                     contacts = "<p><b>Telefone:</b> " + store[s][4] + "</p>";
@@ -231,23 +276,6 @@
             }
         }
 
-        function loadData(url, fn) {
-            $.ajax({
-                type: "GET",
-                url: url,
-                dataType: "json",
-                cache: false,
-                success: fn,
-                error: function(xhr, ajaxOptions, thrownError) {
-                    if (console) {
-                        console.log(xhr.status);
-                        console.log(ajaxOptions);
-                        console.log(thrownError);
-                    }
-                }
-            });
-        }
-
         function loadStores(url, fn) {
             var request = new XMLHttpRequest;
             request.addEventListener("load", fn);
@@ -272,6 +300,11 @@
 
             showMap(store);
         }
+
+        function closeMap() {
+            window.frameElement.parentNode.classList.remove("show");
+            window.frameElement.remove();
+        }
     </script>
 </head>
 
@@ -282,6 +315,10 @@
         <div class="vertical-offset">
             <div id="dumbBox" class="dumbBox"></div>
         </div>
+    </div>
+    <div id="opcoes_mapa">
+        <div id="direcoes_mapa">Direções</div>
+        <div id="fechar_mapa" onclick="closeMap();">Fechar</div>
     </div>
     <script type="text/javascript">
         loadStores("http://m.folhetos.continente.pt/scripts/get_stores.php", setupStores);
