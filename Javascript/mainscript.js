@@ -38,8 +38,8 @@ function lazyLoad(event) {
         i -= 1;
         imageList.push(images[i]);
     }
+    console.log(imageList);
 
-    //document.getElementById("middle_area").addEventListener("scroll", loadImages, false);
     document.addEventListener("touchmove", loadImages, false);
     window.addEventListener("scroll", loadImages, true);
     window.addEventListener("hashchange", loadImages, false);
