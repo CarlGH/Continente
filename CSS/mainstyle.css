@@ -156,11 +156,16 @@ button, :focus, :active, ::-moz-focus-inner{
     border-radius: 5px;
     font-size: 0px;
     height: 120px;
-    margin: 0 auto 30px;
+    margin: 10px auto 30px;
     max-width: 768px;
     padding-bottom: 40px;
     perspective: 1px;          /* Previne problema da border-radius no Chrome Android */
     overflow: hidden;
+}
+@media (max-width: 768px) {
+    .large_banner {
+        margin: 10px 10px 30px;
+    }
 }
 .large_banner img{
     height: 100%;
@@ -291,12 +296,8 @@ button, :focus, :active, ::-moz-focus-inner{
 #middle_area > div {
     height: 1px;
     min-height: 100%;
-}
-#middle_area > div:not(.scroll) {
-    overflow: auto;
-}
-.scroll {
-    padding: 30px 10px;
+    display: inline-block;
+    width: 100%;
 }
 #middle_area input:not(:checked) + div {
     display: none;

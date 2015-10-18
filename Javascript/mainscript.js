@@ -1,52 +1,58 @@
+/*
+ * Lazy load permite que as imagens que não estão visíveis no ecrã do utilizador
+ * não carreguem. Quando a imagem começa a aparecer no ecrã do utilizador esta
+ * função carrega a respectiva imagem dinâmicamente e substitui a do ecrã quando
+ * acaba de carregar. Deste modo, tanto o servidor como o cliente, poupam em
+ * tempo, sobrecarga no servidor e no terminal do cliente, e uso de bandwidth.
+ * Todas as imagens que precisam de ser carregadas com este método devem ter o
+ * URI da imagem original no atributo "data-src" e o atributo "src" deve conter
+ * o URI de um placeholder leve e invisível (como uma imagem transparente de
+ * 1px por 1px em formato gif) para o navegador não apresentar um erro de
+ * carregamento de imagem.
+*/
 function lazyLoad() {
-    var images = document.getElementsByTagName("img");
-    var i = images.length;
-    var imageList = [];
+    var i = document.images.length;
+    var visible;
+    var image;
+    var src;
 
-    function loadImages() {
-        var j = imageList.length;
-        var visible;
-        var image;
-        var src;
+    while (i) {
+        i -= 1;
+        visible = document.images[i].getBoundingClientRect();
+        visible = visible.right >= 0 &&
+                  visible.bottom >= 50 &&
+                  document.images[i].offsetWidth !== 0 &&
+                  document.images[i].offsetHeight !== 0 &&
+                  visible.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+                  visible.top <= (window.innerHeight || document.documentElement.clientHeight);
+        src = document.images[i].dataset ?
+              document.images[i].dataset.src :
+              document.images[i].getAttribute("data-src");
 
-        while (j) {
-            j -= 1;
-            visible = imageList[j].getBoundingClientRect();
-            if (imageList[j].offsetWidth !== 0 &&
-                imageList[j].offsetHeight !== 0 &&
-                visible.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-                visible.left <= (window.innerWidth || document.documentElement.clientWidth) &&
-                visible.bottom >= 50 &&
-                visible.right >= 0) {
-                src = imageList[j].getAttribute("data-src");
-                image = new Image();
-                image.onload = function () {
-                    this.element.src = this.src;
+        if (src && visible) {
+
+            image = new Image();
+            image.element = document.images[i];
+            image.addEventListener("load", function () {
+                this.element.src = this.src;
+                if (this.element.dataset) {
+                    delete this.element.dataset.src;
+                } else {
+                    this.element.removeAttribute("data-src");
                 }
-                image.src = src;
-                image.element = imageList[j]
-            }
+            }, false);
+            image.src = src;
+
         }
 
     }
 
-    while (i) {
-        i -= 1;
-        imageList.push(images[i]);
-    }
-
-    document.addEventListener("readystatechange", loadImages, false);
-    document.addEventListener("touchmove", loadImages, false);
-    window.addEventListener("scroll", loadImages, true);
-    window.addEventListener("hashchange", loadImages, false);
-    loadImages();
 }
 
 function xhr(method, url, callback) {
     var request = new XMLHttpRequest;
 
     request.addEventListener("load", callback);
-    //request.open("GET", "http://m.folhetos.continente.pt/scripts/get_stores.php", true);
     request.open("GET", url, true);
     request.send();
 
@@ -116,6 +122,10 @@ function navigateHash() {
 }
 
 window.addEventListener("hashchange", navigateHash, false);
-
 navigateHash();
-//lazyLoad();
+
+document.addEventListener("readystatechange", lazyLoad, false);
+document.addEventListener("touchmove", lazyLoad, false);
+window.addEventListener("hashchange", lazyLoad, false);
+window.addEventListener("scroll", lazyLoad, true);
+lazyLoad();
