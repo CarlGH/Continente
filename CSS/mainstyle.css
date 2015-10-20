@@ -89,7 +89,7 @@ button, :focus, :active, ::-moz-focus-inner{
 
 /* Conteúdo Principal */
 #main_page {
-    background-color: #F1F1F1;
+    background-color: #EEEEEE;
     bottom: 0;
     left: 0;
     position: fixed;
@@ -98,7 +98,8 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 #top_area {
     background-color: #DC191F;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);*/
+    box-shadow: 0 0 5px;
     height: 50px;
     position: relative;
 }
@@ -151,6 +152,7 @@ button, :focus, :active, ::-moz-focus-inner{
     display: none;
 }
 .top_banner{
+    box-shadow: 0 1px 3px #BBBBBB;
     height: 160px;
     margin-bottom: 20px;
     max-width: 768px;
@@ -158,14 +160,14 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 .large_banner {
     background-color: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    border-radius: 5px;
+    /*border: 1px solid #DDDDDD;*/
+    box-shadow: 0 1px 3px #BBBBBB;
     font-size: 0px;
     height: 120px;
     margin: 10px auto 30px;
     max-width: 768px;
     padding-bottom: 40px;
-    perspective: 1px;          /* Previne problema da border-radius no Chrome Android */
+    /*perspective: 1px;           Previne problema da border-radius no Chrome Android */
     overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -174,13 +176,18 @@ button, :focus, :active, ::-moz-focus-inner{
     }
 }
 .top_banner img, .large_banner img{
-    height: 100%;
             transform: translateX(-50%);
          -o-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
        -moz-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     margin-left: 50%;
+}
+.large_banner img{
+    height: 100%;
+}
+.top_banner img{
+    width: 100%;
 }
 .banner_label {
     border-top: 1px solid #DDDDDD;
@@ -284,9 +291,6 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 .folhetos {
     background-position: -5px -205px;
-}
-.notificacoes {
-    background-position: -5px -1055px;
 }
 .lojas {
     background-position: -5px -255px;
