@@ -100,6 +100,7 @@ function navigateMenu(event) {
 }
 
 function navigateHash() {
+    var ativarInicio = document.getElementById("ativar_inicio");
     var paginaAtual = document.getElementById("ativar_" + window.location.hash.substring(1));
     var menuAtual = document.querySelector("[for='ativar_" + window.location.hash.substring(1) + "']");
 
@@ -113,9 +114,9 @@ function navigateHash() {
         
         }
 
-    } else {
+    } else if (ativarInicio) {
 
-        document.getElementById("ativar_inicio").checked = true;
+        ativarInicio.checked = true;
 
     }
 

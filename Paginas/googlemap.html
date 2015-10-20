@@ -7,12 +7,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="Continente">
     <style type="text/css">
-        * {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box
-        }
-        
         html,
         body {
             width: 100%;
@@ -37,119 +31,32 @@
             height: 100%
         }
         
-        #map_content {
-            float: left
-        }
-        
-        #thumb {
-            float: right;
-            padding: 10px
-        }
-        
-        .dumbBoxWrap {
-            display: none;
-            z-index: 40001;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        
-        .dumbBoxOverlay {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            opacity: .5;
-            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-            filter: alpha(opacity=50);
-            z-index: 40000;
-        }
-        
-        .vertical-offset {
-            position: fixed;
-            top: 20%;
-            width: 100%;
-            z-index: 40002;
-        }
-        
-        .dumbBox {
-            width: 80%;
-            max-width: 600px;
-            position: relative;
-            margin: 0 auto;
-            background-color: #FFF;
-            -moz-border-radius: 4px;
-            -webkit-border-radius: 4px;
-            border-radius: 8px;
-            padding: 10px 20px 10px 20px;
-            text-align: left;
-            -moz-box-shadow: rgba(0, 0, 0, 0.9) 0 0 9px;
-            -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0 0 9px;
-            box-shadow: rgba(0, 0, 0, 0.9) 0 0 9px;
-            height: 100%;
-            overflow: auto;
-        }
-        
-        .dumbBox p:first-child {
-            text-align: left;
-        }
-        
-        .dumbBox #close {
-            text-align: center;
-            padding-top: 20px
-        }
-        
-        .dumbBox .button {
-            max-width: 100px;
-        }
-        
-        .button {
-            -moz-box-shadow: inset 0 1px 0 0 #f29c93;
-            -webkit-box-shadow: inset 0 1px 0 0 #f29c93;
-            box-shadow: inset 0 1px 0 0 #f29c93;
-            background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d71018), color-stop(1, #a9070b));
-            background: -moz-linear-gradient( center top, #d71018 5%, #a9070b 100%);
-            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#d71018', endColorstr='#a9070b');
-            background-color: #d71018;
-            -moz-border-radius: 8px;
-            -webkit-border-radius: 8px;
-            border-radius: 8px;
-            border: 1px solid #d83526;
-            display: inline-block;
-            color: #ffffff;
-            font-size: 14px;
-            padding: 6px 24px;
-            text-decoration: none;
-            text-shadow: 1px 1px 0 #b23e35;
-            text-align: center;
-            width: 70%;
-            max-width: 500px
-        }
-        
         .sep {
             display: block;
             width: 100%;
             height: 1px;
             margin: 8px auto 8px auto;
-            border-top: 1px dashed #999
+            border-top: 1px solid #DDD
         }
 
         #opcoes_mapa {
-            bottom: 50px;
+            bottom: 35px;
             font-size: 0;
             left: 10px;
             position: absolute;
         }
 
-        #direcoes_mapa, #fechar_mapa {
+        #fechar_mapa {
             background-clip: padding-box;
             background-color: #FFFFFF;
-            border-left: 0;
+            border-radius: 2px;
             box-shadow: rgba(0, 0, 0, 0.298039) 0 1px 4px -1px;
+            color: #000000;
             cursor: pointer;
             display: inline-block;
             font-family: Roboto, Arial, sans-serif;
             font-size: 11px;
+            font-weight: 500;
             overflow: hidden;
             padding: 11px;
             position: relative;
@@ -157,31 +64,10 @@
             -webkit-user-select: none;
             -webkit-background-clip: padding-box;
         }
-
-        #direcoes_mapa:hover, #fechar_mapa:hover {
-            background-color: #EBEBEB;
-            color: #000;
-        }
-
-        #direcoes_mapa {
-            border-bottom-left-radius: 2px;
-            border-top-left-radius: 2px;
-            color: #000000;
-            font-weight: 500;
-            min-width: 26px;
-        }
-
-        #fechar_mapa {
-            border-bottom-right-radius: 2px;
-            border-top-right-radius: 2px;
-            color: #565656;
-            min-width: 35px;
-        }
     </style>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=pt-PT"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">
-        //google.maps.visualRefresh = true;
         var map;
         var gmarkers = [];
 
@@ -206,25 +92,28 @@
 
             map = new google.maps.Map(document.getElementById("mapholder"), mapOptions);
 
-            var meImage = {
+            var customMarker = {
                 url: "../Imagens/marker_continente.png",
                 size: new google.maps.Size(25, 40),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(0, 40)
             };
 
-            var infowindow = null;
-            var infowindow = new google.maps.InfoWindow({
-                //content: "A carregar...",
-                maxWidth: 200
+            var infoWindow = new google.maps.InfoWindow({
+                content: "<b>A carregar</b>...<hr>",
+                //disableAutoPan: true,
+                maxWidth: 250
             });
 
 
             for (s = 0; s < store.length; s++) {
                 var latlng = new google.maps.LatLng(store[s][0], store[s][1]);
                 var contacts = "";
+                if (store[s][6] != "" && store[s][6] != " ") {
+                    contacts = "<p><b>Horário:</b> " + store[s][6] + "</p>";
+                }
                 if (store[s][4] != "" && store[s][4] != " ") {
-                    contacts = "<p><b>Telefone:</b> " + store[s][4] + "</p>";
+                    contacts += "<p><b>Telefone:</b> " + store[s][4] + "</p>";
                 }
                 if (store[s][5] != "" && store[s][5] != " ") {
                     contacts += "<p><b>Fax:</b> " + store[s][5] + "</p>";
@@ -232,27 +121,22 @@
                 if (contacts != "") {
                     contacts += "<span class='sep'></span>";
                 }
-                var poi = new google.maps.Marker({
+                var marker = new google.maps.Marker({
                     position: latlng,
                     title: store[s][2],
                     map: map,
-                    icon: meImage,
-                    //shadow: shadow,
+                    icon: customMarker,
                     zIndex: s,
-                    html: "<div id='map_content'><h3>" + store[s][2] + "</h3><p><b>Morada:</b>" + store[s][3] + "</p><span class='sep'></span>" + contacts + "<p id='close'><a href='javascript:closedumbBox()' class='button'>Fechar</a></p></div>"
+                    html: "<div id='map_content'><h3>" + store[s][2] + "</h3><p><b>Morada: </b>" + store[s][3] + "</p><span class='sep'></span>" + contacts + "</div>"
                 });
-                google.maps.event.addListener(poi, "click", function() {
-                    map.panTo(this.getPosition());
-                    document.getElementById("dumbBox").innerHTML = this.html;
-                    document.getElementById("dumbBoxWrap").style.display = "block";
+                google.maps.event.addListener(marker, "click", function() {
+                    infoWindow.setContent(this.html);
+                    infoWindow.open(map, this);
+                    //map.setCenter(this.getPosition());
                 });
-                gmarkers.push(poi);
+                gmarkers.push(marker);
             }
             getLocation();
-        }
-
-        function closedumbBox() {
-            document.getElementById("dumbBoxWrap").style.display = "none";
         }
 
         function showError(error) {
@@ -282,16 +166,17 @@
         }
 
         function setupStores(json) {
-            var j = JSON.parse(json.target.response).GetRetailStoresResult.Result;
+            var stores = JSON.parse(json.target.response).GetRetailStoresResult.Result;
             store = new Array();
-            for (var i in j) {
+            for (var i in stores) {
                 array_push = [
-                    j[i].Latitude,
-                    j[i].Longitude,
-                    j[i].Name,
-                    j[i].Address,
-                    j[i].Telephone,
-                    j[i].Fax
+                    stores[i].Latitude,
+                    stores[i].Longitude,
+                    "Continente Modelo - " + stores[i].Name.split(" -")[0],
+                    stores[i].Address,
+                    stores[i].Telephone,
+                    stores[i].Fax,
+                    stores[i].OpeningAndClosingHourDescription
                 ];
                 store.push(array_push);
             }
@@ -308,14 +193,7 @@
 
 <body>
     <div id="mapholder"></div>
-    <div id="dumbBoxWrap" class="dumbBoxWrap">
-        <div class="dumbBoxOverlay">&nbsp;</div>
-        <div class="vertical-offset">
-            <div id="dumbBox" class="dumbBox"></div>
-        </div>
-    </div>
     <div id="opcoes_mapa">
-        <div id="direcoes_mapa">Direções</div>
         <div id="fechar_mapa" onclick="closeMap();">Fechar</div>
     </div>
     <script type="text/javascript">

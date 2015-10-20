@@ -150,6 +150,12 @@ button, :focus, :active, ::-moz-focus-inner{
 #middle_area > input{
     display: none;
 }
+.top_banner{
+    height: 160px;
+    margin-bottom: 20px;
+    max-width: 768px;
+    overflow: hidden;
+}
 .large_banner {
     background-color: #FFFFFF;
     border: 1px solid #DDDDDD;
@@ -167,7 +173,7 @@ button, :focus, :active, ::-moz-focus-inner{
         margin: 10px 10px 30px;
     }
 }
-.large_banner img{
+.top_banner img, .large_banner img{
     height: 100%;
             transform: translateX(-50%);
          -o-transform: translateX(-50%);
