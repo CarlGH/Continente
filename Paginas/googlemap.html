@@ -88,9 +88,9 @@
                     closestDistance = distance;
                 }
             }
+            map.setZoom(13);
             infoWindow.setContent(gmarkers[closestMarker].html);
             infoWindow.open(map, gmarkers[closestMarker]);
-            map.setZoom(13);
         }
 
         function getLocation2() {
