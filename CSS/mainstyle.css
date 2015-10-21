@@ -253,6 +253,7 @@ button, :focus, :active, ::-moz-focus-inner{
     width: 100%;
 }
 #menu_lista {
+    bottom: 50px;
     color: #4D4D4D;
     font-weight: 700;
     font-size: 14px;
@@ -261,7 +262,6 @@ button, :focus, :active, ::-moz-focus-inner{
     padding: 0;
     position: fixed;
     top: 0;
-    bottom: 50px;
     overflow-y: scroll;
     width: 100%;
 }
@@ -324,6 +324,9 @@ button, :focus, :active, ::-moz-focus-inner{
     line-height: 40px;
     margin: 10px;
     text-align: center;
+}
+.botao_simples h3{
+    color: #DC191F;
 }
 
 /* Lojas */
