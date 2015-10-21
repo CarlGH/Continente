@@ -75,7 +75,7 @@ function openMap(event) {
 
     }
 
-    mapa.classList.toggle("show");
+    mapa.parentNode.classList.toggle("show");
 
 }
 
