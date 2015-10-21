@@ -81,6 +81,7 @@
 
             while (i) {
                 i -= 1;
+                console.log(gmarkers[i].getPosition(), pos.latLng);
                 distance = google.maps.geometry.spherical.computeDistanceBetween(gmarkers[i].getPosition(), pos.latLng);
                 if (distance < closestDistance) {
                     closestMarker = i;
