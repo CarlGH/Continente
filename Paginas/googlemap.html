@@ -82,7 +82,6 @@
 
             while (i) {
                 i -= 1;
-                console.log(gmarkers[i].getPosition(), currentPos);
                 distance = google.maps.geometry.spherical.computeDistanceBetween(gmarkers[i].getPosition(), currentPos);
                 if (distance < closestDistance) {
                     closestMarker = i;
@@ -161,7 +160,7 @@
                 });
                 gmarkers.push(marker);
             }
-            getLocation();
+            getLocation2();
         }
 
         function showError(error) {
@@ -219,7 +218,6 @@
 <body>
     <div id="mapholder"></div>
     <div id="opcoes_mapa">
-        <div id="fechar_mapa" onclick="getLocation2();">Loja mais perto</div>
         <div id="fechar_mapa" onclick="closeMap();">Fechar</div>
     </div>
     <script type="text/javascript">
