@@ -74,6 +74,7 @@
         var gmarkers = [];
 
         function getClosestStore(pos) {
+            var currentPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
             var closestMarker = -1;
             var closestDistance = Number.MAX_VALUE;
             var i = gmarkers.length;
@@ -81,8 +82,8 @@
 
             while (i) {
                 i -= 1;
-                console.log(gmarkers[i].getPosition(), pos.latLng);
-                distance = google.maps.geometry.spherical.computeDistanceBetween(gmarkers[i].getPosition(), pos.latLng);
+                console.log(gmarkers[i].getPosition(), currentPos);
+                distance = google.maps.geometry.spherical.computeDistanceBetween(gmarkers[i].getPosition(), currentPos);
                 if (distance < closestDistance) {
                     closestMarker = i;
                     closestDistance = distance;
