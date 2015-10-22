@@ -170,8 +170,10 @@ button, :focus, :active, ::-moz-focus-inner{
        -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     box-shadow: 0 2px 3px #CCCCCC;
+    height: 250px;
     margin: 10px 0 0 10px;
     overflow: hidden;
+    position: relative;
     width: 165px;
 }
 .small_banner_vertical img {
@@ -179,8 +181,12 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 .small_banner_vertical .banner_label {
     background: #FFFFFF;
+    bottom: 0;
     font-size: 12px;
+    height: 50px;
     padding: 0 5px 5px;
+    position: absolute;
+    width: 165px;
 }
 .small_banner_vertical h3 {
     margin: 0;
