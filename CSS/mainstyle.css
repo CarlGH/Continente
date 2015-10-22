@@ -131,7 +131,11 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 #search_field {
     background-color: #FFFFFF;
-    border-radius: 7px;
+            border-radius: 7px;
+         -o-border-radius: 7px;
+        -ms-border-radius: 7px;
+       -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
     bottom: 7px;
     display: none;
     left: 57px;
@@ -157,6 +161,29 @@ button, :focus, :active, ::-moz-focus-inner{
     margin-bottom: 20px;
     max-width: 768px;
     overflow: hidden;
+}
+.small_banner_vertical {
+    display: inline-block;
+            border-radius: 3px;
+         -o-border-radius: 3px;
+        -ms-border-radius: 3px;
+       -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0 2px 3px #CCCCCC;
+    margin: 10px 0 0 10px;
+    overflow: hidden;
+    width: 165px;
+}
+.small_banner_vertical img {
+    width: 100%;
+}
+.small_banner_vertical .banner_label {
+    background: #FFFFFF;
+    font-size: 12px;
+    padding: 0 5px 5px;
+}
+.small_banner_vertical h3 {
+    margin: 0;
 }
 .large_banner {
     background-color: #FFFFFF;
@@ -185,14 +212,14 @@ button, :focus, :active, ::-moz-focus-inner{
 .large_banner img{
     height: 100%;
 }
-.top_banner img{
-    width: 100%;
-}
-.banner_label {
+.large_banner .banner_label {
     border-top: 1px solid #D3D3D3;
     font-size: 16px;
     line-height: 40px;
     text-align: center;
+}
+.top_banner img{
+    width: 100%;
 }
 
 /* Menu Lateral */
@@ -282,6 +309,9 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 .cartao {
     background-position: -5px -55px;
+}
+.compras {
+    background-position: -5px -1055px;
 }
 .produtos {
     background-position: -5px -1055px;
