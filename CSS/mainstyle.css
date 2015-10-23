@@ -159,11 +159,12 @@ button, :focus, :active, ::-moz-focus-inner{
 .top_banner{
     box-shadow: 0 1px 1px 1px #BBBBBB;
     height: 160px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     max-width: 768px;
     overflow: hidden;
 }
 .small_banner_vertical {
+    background-color: #FFFFFF;
     display: inline-block;
             border-radius: 3px;
          -o-border-radius: 3px;
@@ -184,7 +185,8 @@ button, :focus, :active, ::-moz-focus-inner{
     background: #FFFFFF;
     bottom: 0;
     font-size: 12px;
-    height: 50px;
+    height: 20px;
+    line-height: 20px;
     padding: 5px;
     position: absolute;
     width: 155px;
