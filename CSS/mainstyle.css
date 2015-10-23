@@ -226,14 +226,13 @@ button, :focus, :active, ::-moz-focus-inner{
     border-top: 1px solid #D3D3D3;
     bottom: 0;
     color: #808080;
-    font-size: 10px;
-    line-height: 20px;
+    font-size: 11px;
+    left: 0;
+    line-height: 22px;
+    padding-left: 5px;
     position: absolute;
+    right: 0;
     /*text-align: center;*/
-    width: 100%;
-}
-.large_banner .banner_label h3{
-    margin: 0;
 }
 .top_banner img{
     width: 100%;
