@@ -65,7 +65,7 @@
                  U+F000;
 }
 html {
-    font-family: "Droid Sans", "Roboto", "Optima", "Trebuchet MS", Arial, sans-serif;
+    font-family: "Roboto", "Trebuchet MS", Arial, sans-serif;
     /*font-family: "Quicksand", "Open Sans", Optima, Helvetica, Arial, sans-serif;*/
     /*font-family: "Open Sans", Helvetica, Arial, sans-serif;*/
 }
@@ -185,9 +185,9 @@ button, :focus, :active, ::-moz-focus-inner{
     bottom: 0;
     font-size: 12px;
     height: 50px;
-    padding: 0 5px 5px;
+    padding: 5px;
     position: absolute;
-    width: 165px;
+    width: 155px;
 }
 .small_banner_vertical h3 {
     margin: 0;
