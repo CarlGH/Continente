@@ -65,7 +65,8 @@
                  U+F000;
 }
 html {
-    font-family: "Quicksand", "Open Sans", Optima, Helvetica, Arial, sans-serif;
+    font-family: "Droid Sans", "Roboto", "Optima", "Trebuchet MS", Arial, sans-serif;
+    /*font-family: "Quicksand", "Open Sans", Optima, Helvetica, Arial, sans-serif;*/
     /*font-family: "Open Sans", Helvetica, Arial, sans-serif;*/
 }
 body {
