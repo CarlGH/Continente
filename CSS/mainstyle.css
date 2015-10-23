@@ -194,13 +194,15 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 .large_banner {
     background-color: #FFFFFF;
-    border: 1px solid #D3D3D3;
+    /*border: 1px solid #D3D3D3;*/
+    box-shadow: 0 1px 3px #CCCCCC;
     font-size: 0px;
     height: 120px;
     margin: 10px auto 30px;
     max-width: 768px;
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;*/
     /*perspective: 1px;           Previne problema da border-radius no Chrome Android */
+    position: relative;
     overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -220,10 +222,18 @@ button, :focus, :active, ::-moz-focus-inner{
     height: 100%;
 }
 .large_banner .banner_label {
+    background-color: #FFFFFF;
     border-top: 1px solid #D3D3D3;
-    font-size: 16px;
-    line-height: 40px;
-    text-align: center;
+    bottom: 0;
+    color: #808080;
+    font-size: 10px;
+    line-height: 20px;
+    position: absolute;
+    /*text-align: center;*/
+    width: 100%;
+}
+.large_banner .banner_label h3{
+    margin: 0;
 }
 .top_banner img{
     width: 100%;
