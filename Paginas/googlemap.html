@@ -80,6 +80,8 @@
             var i = gmarkers.length;
             var distance;
 
+            map.setZoom(13);
+
             while (i) {
                 i -= 1;
                 distance = google.maps.geometry.spherical.computeDistanceBetween(gmarkers[i].getPosition(), currentPos);
@@ -94,12 +96,11 @@
 
         function getLocation2() {
             if (navigator.geolocation) {
-                map.setZoom(13);
                 navigator.geolocation.getCurrentPosition(getClosestStore, showError);
             }
         }
 
-        function getLocation() {
+        /*function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(zoomPosition, showError);
             }
@@ -108,7 +109,7 @@
         function zoomPosition(position) {
             map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
             map.setZoom(13);
-        }
+        }*/
 
         function showMap(store) {
             var latlng = new google.maps.LatLng(39.900000, -15.110685);
@@ -216,7 +217,7 @@
         }
 
         function closeMap() {
-            window.frameElement.parentNode.parentNode.classList.remove("show");
+            window.frameElement.parentNode.classList.remove("show");
             window.frameElement.remove();
         }
     </script>

@@ -53,10 +53,25 @@ function xhr(method, url, callback) {
     var request = new XMLHttpRequest;
 
     request.addEventListener("load", callback);
-    request.open("GET", url, true);
-    request.send();
+    request.open(method, url, true);
+    //request.send();
+    return request;
 
 }
+
+/*function searchProducts() {
+    var request; // nao funciona CORS
+    var url = "http://www.continente.pt/stores/continente/_vti_bin/eCsfServices/SearchServices.svc/GetQuerySuggestions";
+    
+    function processResult() {
+        console.log(request);
+    }
+
+    request = xhr("POST", url, processResult);
+    request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+    request.send({"request": {"Query": "mel"}});
+
+}*/
 
 function openMap(event) {
     var mapa = document.getElementById("mapa");
@@ -70,12 +85,38 @@ function openMap(event) {
         lojas.height = "100%";
         lojas.width = "100%";
         lojas.setAttribute("frameborder", 0);
-        mapa.appendChild(lojas);
-        console.log(event);
+        //mapa.appendChild(lojas);
+        //console.log(event);
+        event.parentNode.appendChild(lojas);
 
     }
 
     mapa.parentNode.classList.toggle("show");
+
+}
+
+function openStores(event) {
+    var lojas = document.getElementById("lojas");
+    var lista = document.getElementById("lojas_lista");
+    var request;
+
+    function processResult(data) {
+        console.log(request, data);
+        lista.textContent = JSON.parse(request.response);
+    }
+
+    if (!lista) {
+
+        lista = document.createElement("div");
+        lista.id = "lojas_lista";
+        request = xhr("GET",
+                      "http://m.folhetos.continente.pt/scripts/get_stores.php",
+                      processResult);
+        request.send();
+
+    }
+
+    lojas.parentNode.classList.toggle("show");
 
 }
 

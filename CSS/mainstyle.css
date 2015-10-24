@@ -373,10 +373,10 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 
 /* Lojas */
-#mapa {
+#mapa_lojas {
     height: 100%;
 }
-div:not(.show) > #mapa, div.show > .area_simples {
+div:not(.show) > #mapa_lojas, div.show > .area_simples {
     display: none;
 }
 
