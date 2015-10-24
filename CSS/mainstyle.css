@@ -77,6 +77,9 @@ button, :focus, :active, ::-moz-focus-inner{
     -webkit-tap-highlight-color: transparent;
     -webkit-user-modify: read-write-plaintext-only;
 }
+.hide {
+    display: none;
+}
 
 /* Conteúdo Principal */
 #main_page {
@@ -102,6 +105,9 @@ button, :focus, :active, ::-moz-focus-inner{
     float: left;
     height: 50px;
     width: 50px;
+}
+#menu_button.back {
+    background-position: 0 -550px;
 }
 #page_title {
     color: #FFFFFF;
@@ -375,23 +381,32 @@ button, :focus, :active, ::-moz-focus-inner{
 /* Lojas */
 #mapa_lojas {
     height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 #lojas_lista {
+    background-color: #EEEEEE;
     font-size: 16px;
+    left: 0;
     margin: 10px;
     min-height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
-#lojas_lista h4{
+#lojas_lista li{
     background: #F7F7F7;
     border-bottom: 1px solid #EEEEEE;
-    font-weight: normal;
     line-height: 40px;
+    list-style: none;
     margin: 0;
     padding-left: 10px;
 }
-div:not(.show) > #mapa_lojas, div:not(.show) > #lojas_lista, div.show > .area_simples {
+/*div:not(.show) > #mapa_lojas, div:not(.show) > #lojas_lista, div.show > .area_simples {
     display: none;
-}
+}*/
 
 /* Night Mode */
 .night_mode #menu_area {

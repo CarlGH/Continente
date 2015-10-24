@@ -99,9 +99,7 @@
             </div>
             <input type="radio" name="menu_lista" id="ativar_lojas" class="lojas"/>
             <div name="lojas" class="middle_area_content">
-                <div id="mapa"></div>
                 <div class="area_simples" onclick="openMap(this);">Mostrar loja mais próxima no mapa</div>
-                <div id="lojas"></div>
                 <div class="area_simples" onclick="openStores(this);">Mostrar lista de todas as lojas</div>
             </div>
             <input type="radio" name="menu_lista" id="ativar_entrar" class="entrar"/>
@@ -154,7 +152,7 @@
         </div>
 
         <div id="top_area">
-            <button id="menu_button" onclick="toggleMenu();"></button>
+            <button id="menu_button" onclick="toggleMenu(event);"></button>
             <button id="search_button"></button>
             <div id="search_field"></div>
             <div id="page_title">Início</div>

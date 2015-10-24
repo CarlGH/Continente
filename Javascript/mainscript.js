@@ -59,6 +59,14 @@ function xhr(method, url, callback) {
 
 }
 
+function backMenu(element) {
+    var menu = document.getElementById("menu_button");
+
+    menu.classList.add("back");
+    menu.subPage = element;
+
+}
+
 /*function searchProducts() {
     var request; // nao funciona CORS
     var url = "http://www.continente.pt/stores/continente/_vti_bin/eCsfServices/SearchServices.svc/GetQuerySuggestions";
@@ -74,10 +82,14 @@ function xhr(method, url, callback) {
 }*/
 
 function openMap(event) {
-    var mapa = document.getElementById("mapa");
     var lojas = document.getElementById("mapa_lojas");
 
-    if (!lojas) {
+    if (lojas) {
+
+        lojas.classList.remove("hide");
+        backMenu(lojas);
+
+    } else {
 
         lojas = document.createElement("iframe");
         lojas.id = "mapa_lojas";
@@ -88,15 +100,15 @@ function openMap(event) {
         //mapa.appendChild(lojas);
         //console.log(event);
         event.parentNode.appendChild(lojas);
+        backMenu(lojas);
 
     }
 
-    mapa.parentNode.classList.toggle("show");
+    event.parentNode.classList.toggle("show");
 
 }
 
 function openStores(event) {
-    var lojas = document.getElementById("lojas");
     var lista = document.getElementById("lojas_lista");
     var request;
 
@@ -138,7 +150,7 @@ function openStores(event) {
             } else {
 
                 lista[name] = [data[i]];
-                lista.textContent += "<h4>" + name + "</h4>";
+                lista.textContent += "<li>" + name + "</li>";
 
             }
 
@@ -146,11 +158,17 @@ function openStores(event) {
 
         lista.innerHTML = lista.textContent;
         event.parentNode.appendChild(lista);
-        lojas.parentNode.classList.toggle("show");
+        //event.parentNode.classList.toggle("show");
+        backMenu(lista);
 
     }
 
-    if (!lista) {
+    if (lista) {
+
+        lista.classList.remove("hide");
+        backMenu(lista);
+
+    } else {
 
         lista = document.createElement("div");
         lista.id = "lojas_lista";
@@ -163,9 +181,19 @@ function openStores(event) {
 
 }
 
-function toggleMenu() {
+function toggleMenu(event) {
 
-    document.body.classList.toggle("show");
+    if (event.target.subPage) {
+
+        event.target.subPage.classList.add("hide");
+        event.target.classList.remove("back");
+        delete event.target.subPage;
+
+    } else {
+
+        document.body.classList.toggle("show");
+
+    }
 
 }
 
@@ -179,14 +207,15 @@ function navigateMenu(event) {
 
     window.location.hash = event.target.className;
     document.getElementById("page_title").textContent = event.target.textContent;
-
     closeMenu();
+
 }
 
 function navigateHash() {
+    var hash = window.location.hash.substring(1);
     var ativarInicio = document.getElementById("ativar_inicio");
-    var paginaAtual = document.getElementById("ativar_" + window.location.hash.substring(1));
-    var menuAtual = document.querySelector("[for='ativar_" + window.location.hash.substring(1) + "']");
+    var paginaAtual = document.getElementById("ativar_" + hash);
+    var menuAtual = document.querySelector("[for='ativar_" + hash + "']");
 
     if (paginaAtual) {
 
@@ -194,7 +223,7 @@ function navigateHash() {
 
         if (menuAtual) {
 
-            document.getElementById("page_title").textContent = document.querySelector("[for='ativar_" + window.location.hash.substring(1) + "']").textContent;
+            document.getElementById("page_title").textContent = document.querySelector("[for='ativar_" + hash + "']").textContent;
         
         }
 

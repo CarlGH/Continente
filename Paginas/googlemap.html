@@ -39,32 +39,6 @@
             margin: 8px auto 8px auto;
             border-top: 1px solid #DDD
         }
-
-        #opcoes_mapa {
-            bottom: 25px;
-            font-size: 0;
-            position: absolute;
-            right: 10px;
-        }
-
-        #fechar_mapa {
-            background-clip: padding-box;
-            background-color: #FFFFFF;
-            border-radius: 2px;
-            box-shadow: rgba(0, 0, 0, 0.298039) 0 1px 4px -1px;
-            color: #000000;
-            cursor: pointer;
-            display: inline-block;
-            font-family: Roboto, Arial, sans-serif;
-            font-size: 11px;
-            font-weight: 500;
-            overflow: hidden;
-            padding: 11px;
-            position: relative;
-            text-align: center;
-            -webkit-user-select: none;
-            -webkit-background-clip: padding-box;
-        }
     </style>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=pt-PT&amp;libraries=geometry"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
@@ -94,7 +68,7 @@
             infoWindow.open(map, gmarkers[closestMarker]);
         }
 
-        function getLocation2() {
+        function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(getClosestStore, showError);
             }
@@ -168,7 +142,7 @@
                 });
                 gmarkers.push(marker);
             }
-            getLocation2();
+            getLocation();
         }
 
         function showError(error) {
@@ -215,19 +189,11 @@
 
             showMap(store);
         }
-
-        function closeMap() {
-            window.frameElement.parentNode.classList.remove("show");
-            window.frameElement.remove();
-        }
     </script>
 </head>
 
 <body>
     <div id="mapholder"></div>
-    <div id="opcoes_mapa">
-        <div id="fechar_mapa" onclick="closeMap();">Fechar</div>
-    </div>
     <script type="text/javascript">
         loadStores("http://m.folhetos.continente.pt/scripts/get_stores.php", setupStores);
     </script>
