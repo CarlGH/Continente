@@ -54,7 +54,7 @@
 }
 
 html {
-    color: #333333;
+    color: #555555;
     font-family: "Roboto", "Trebuchet MS", Arial, sans-serif;
     /*font-family: "Quicksand", "Open Sans", Optima, Helvetica, Arial, sans-serif;*/
     /*font-family: "Open Sans", Helvetica, Arial, sans-serif;*/
@@ -376,7 +376,20 @@ button, :focus, :active, ::-moz-focus-inner{
 #mapa_lojas {
     height: 100%;
 }
-div:not(.show) > #mapa_lojas, div.show > .area_simples {
+#lojas_lista {
+    font-size: 16px;
+    margin: 10px;
+    min-height: 100%;
+}
+#lojas_lista h4{
+    background: #F7F7F7;
+    border-bottom: 1px solid #EEEEEE;
+    font-weight: normal;
+    line-height: 40px;
+    margin: 0;
+    padding-left: 10px;
+}
+div:not(.show) > #mapa_lojas, div:not(.show) > #lojas_lista, div.show > .area_simples {
     display: none;
 }
 

@@ -100,9 +100,54 @@ function openStores(event) {
     var lista = document.getElementById("lojas_lista");
     var request;
 
-    function processResult(data) {
-        console.log(request, data);
-        lista.textContent = JSON.parse(request.response);
+    function processResult() {
+        var data = JSON.parse(request.response).GetRetailStoresResult.Result;
+        var i = data.length;
+        var nome;
+
+        function sortArray(previous, next) {
+            previous = previous.Region || previous.Name;
+            next = next.Region || next.Name;
+
+            return previous.localeCompare(next);
+
+        }
+
+        data.sort(sortArray);
+        data.reverse();
+
+        while (i) {
+            i -= 1;
+
+            if (data[i].Region) {
+
+                name = data[i].Region;
+
+            } else {
+
+                name = data[i].Name.split(" -")[0];
+
+            }
+
+            name = name.trim();
+
+            if (lista[name]) {
+
+                lista[name].push(data[i]);
+
+            } else {
+
+                lista[name] = [data[i]];
+                lista.textContent += "<h4>" + name + "</h4>";
+
+            }
+
+        }
+
+        lista.innerHTML = lista.textContent;
+        event.parentNode.appendChild(lista);
+        lojas.parentNode.classList.toggle("show");
+
     }
 
     if (!lista) {
@@ -115,8 +160,6 @@ function openStores(event) {
         request.send();
 
     }
-
-    lojas.parentNode.classList.toggle("show");
 
 }
 
