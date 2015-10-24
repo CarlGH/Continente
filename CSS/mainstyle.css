@@ -390,7 +390,7 @@ button, :focus, :active, ::-moz-focus-inner{
     background-color: #EEEEEE;
     font-size: 16px;
     left: 0;
-    margin: 10px;
+    padding: 10px;
     min-height: 100%;
     position: absolute;
     right: 0;
