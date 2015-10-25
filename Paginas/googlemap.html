@@ -75,27 +75,13 @@
             }
         }
 
-        /*function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(zoomPosition, showError);
-            }
-        }
-
-        function zoomPosition(position) {
-            map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-            map.setZoom(13);
-        }*/
-
         function showMap(store) {
             var latlng = new google.maps.LatLng(39.900000, -15.110685);
             var mapOptions = {
                 zoom: 5,
                 center: latlng,
-                zoomControlOptions: {
-                    position: google.maps.ControlPosition.TOP_RIGHT
-                },
-                streetViewControlOptions: {
-                    position: google.maps.ControlPosition.TOP_CENTER
+                mapTypeControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_BOTTOM
                 },
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
