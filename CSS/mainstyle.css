@@ -54,7 +54,7 @@
 }
 
 html {
-    color: #555555;
+    color: #555;
     font-family: "Roboto", "Trebuchet MS", Arial, sans-serif;
     /*font-family: "Quicksand", "Open Sans", Optima, Helvetica, Arial, sans-serif;*/
     /*font-family: "Open Sans", Helvetica, Arial, sans-serif;*/
@@ -63,6 +63,9 @@ body {
     margin: 0;
 }
 button {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
     background: none;
     border: none;
     margin: 0;
@@ -83,7 +86,7 @@ button, :focus, :active, ::-moz-focus-inner{
 
 /* Conteúdo Principal */
 #main_page {
-    background-color: #EEEEEE;
+    background-color: #EEE;
     bottom: 0;
     left: 0;
     position: fixed;
@@ -110,7 +113,7 @@ button, :focus, :active, ::-moz-focus-inner{
     background-position: 0 -550px;
 }
 #page_title {
-    color: #FFFFFF;
+    color: #FFF;
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 50px;
@@ -127,7 +130,7 @@ button, :focus, :active, ::-moz-focus-inner{
     width: 50px;
 }
 #search_field {
-    background-color: #FFFFFF;
+    background-color: #FFF;
             border-radius: 7px;
          -o-border-radius: 7px;
         -ms-border-radius: 7px;
@@ -153,21 +156,21 @@ button, :focus, :active, ::-moz-focus-inner{
     display: none;
 }
 .top_banner{
-    box-shadow: 0 1px 1px 1px #BBBBBB;
+    box-shadow: 0 1px 1px 1px #BBB;
     height: 160px;
     margin: 0 auto 20px;
     max-width: 768px;
     overflow: hidden;
 }
 .small_banner_vertical {
-    background-color: #FFFFFF;
+    background-color: #FFF;
     display: inline-block;
             border-radius: 3px;
          -o-border-radius: 3px;
         -ms-border-radius: 3px;
        -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    box-shadow: 0 2px 3px #CCCCCC;
+    box-shadow: 0 2px 3px #CCC;
     height: 250px;
     margin: 10px 0 0 10px;
     overflow: hidden;
@@ -178,7 +181,7 @@ button, :focus, :active, ::-moz-focus-inner{
     width: 100%;
 }
 .small_banner_vertical .banner_label {
-    background: #FFFFFF;
+    background: #FFF;
     bottom: 0;
     font-size: 12px;
     height: 20px;
@@ -191,9 +194,9 @@ button, :focus, :active, ::-moz-focus-inner{
     margin: 0;
 }
 .large_banner {
-    background-color: #FFFFFF;
+    background-color: #FFF;
     /*border: 1px solid #D3D3D3;*/
-    box-shadow: 0 1px 3px #CCCCCC;
+    box-shadow: 0 1px 3px #CCC;
     font-size: 0px;
     height: 120px;
     margin: 10px auto 30px;
@@ -220,7 +223,7 @@ button, :focus, :active, ::-moz-focus-inner{
     height: 100%;
 }
 .large_banner .banner_label {
-    background-color: #FFFFFF;
+    background-color: #FFF;
     border-top: 1px solid #D3D3D3;
     bottom: 0;
     color: #808080;
@@ -260,7 +263,7 @@ button, :focus, :active, ::-moz-focus-inner{
     z-index: 0;
 }
 #menu_area {
-    background-color: #FFFFFF;
+    background-color: #FFF;
     /*background-color: #F1F1F1;*/
     /*background-color: #CB2F29;*/
     bottom: 0;
@@ -288,7 +291,7 @@ button, :focus, :active, ::-moz-focus-inner{
 #menu_bottom {
     background-color: #A6181C;
     bottom: 0;
-    color: #FFFFFF;
+    color: #FFF;
     height: 50px;
     position: absolute;
     width: 100%;
@@ -311,42 +314,43 @@ button, :focus, :active, ::-moz-focus-inner{
     background-repeat: no-repeat;
     background-size: 50px;
     /*border-bottom: 1px solid #E7E7E7;*/
-    line-height: 40px;
+    line-height: 50px;
     margin: 0 5px;
     padding-left: 40px;
+    text-indent: 10px;
 }
 #menu_lista input {
     display: none;
 }
 .inicio {
-    background-position: -5px -5px;
+    background-position: -5px 0;
 }
 .cartao {
-    background-position: -5px -55px;
+    background-position: -5px -50px;
 }
 .compras {
-    background-position: -5px -105px;
+    background-position: -5px -100px;
 }
 .produtos {
-    background-position: -5px -1055px;
+    background-position: -5px -1050px;
 }
 .listas {
-    background-position: -5px -155px;
+    background-position: -5px -150px;
 }
 .receitas {
-    background-position: -5px -205px;
+    background-position: -5px -200px;
 }
 .folhetos {
-    background-position: -5px -255px;
+    background-position: -5px -250px;
 }
 .lojas {
-    background-position: -5px -305px;
+    background-position: -5px -300px;
 }
 .entrar {
-    background-position: -5px -355px;
+    background-position: -5px -350px;
 }
 .preferencias {
-    background-position: -5px -405px;
+    background-position: -5px -400px;
 }
 
 /* Navegação */
@@ -361,15 +365,15 @@ button, :focus, :active, ::-moz-focus-inner{
 }
 .area_simples {
     background-color: #F7F7F7;
-    border-bottom: 1px solid #EEEEEE;
-    /*background: #FFFFFF;
+    border-bottom: 1px solid #EEE;
+    /*background: #FFF;
     border: 1px solid #D3D3D3;*/
     /*border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);*/
     font-size: 16px;
-    line-height: 40px;
+    line-height: 50px;
     /*margin: 10px;*/
-    text-align: center;
+    text-indent: 10px;
 }
 .middle_area_content h3{
     color: #DC191F;
@@ -387,7 +391,7 @@ button, :focus, :active, ::-moz-focus-inner{
     top: 0;
 }
 #lojas_lista {
-    background-color: #EEEEEE;
+    background-color: #EEE;
     font-size: 16px;
     left: 0;
     padding: 10px;
@@ -396,13 +400,37 @@ button, :focus, :active, ::-moz-focus-inner{
     right: 0;
     top: 0;
 }
+#lojas_lista input{
+    display: none;
+}
+#lojas_lista input:checked + ul{
+    display: block;
+}
 #lojas_lista li{
     background: #F7F7F7;
-    border-bottom: 1px solid #EEEEEE;
-    line-height: 40px;
+    border-bottom: 1px solid #EEE;
+    border-top: 1px solid #FFF;
+    line-height: 50px;
     list-style: none;
     margin: 0;
-    padding-left: 10px;
+    text-indent: 10px;
+}
+#lojas_lista li button{
+    font-size: 16px;
+}
+#lojas_lista ul{
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+#lojas_lista ul > li{
+    background-color: #DDD;
+    border: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /*border-bottom: 1px solid #BBB;
+    border-top: 1px solid #EEE;*/
 }
 /*div:not(.show) > #mapa_lojas, div:not(.show) > #lojas_lista, div.show > .area_simples {
     display: none;

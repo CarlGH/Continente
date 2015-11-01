@@ -117,6 +117,39 @@ function openStores(event) {
         var i = data.length;
         var nome;
 
+        function subStores(store) {
+            var subList = store.target.getElementsByTagName("ul")[0];
+            var stores = lista[store.target.textContent];
+            var substore;
+            var j;
+
+            //console.log(lista, store.target.textContent, lista[store.target.textContent]);
+            if (stores) {
+
+                console.log(stores, store.target);
+                if (!subList) {
+                    j = stores.length;
+
+                    subList = document.createElement("ul");
+
+                    while (j) {
+                        j -= 1;
+
+                        substore = document.createElement("li");
+                        substore.details = stores[j];
+                        substore.textContent = stores[j].Name;
+                        subList.appendChild(substore);
+
+                    }
+
+                    store.target.appendChild(subList);
+
+                }
+
+            }
+
+        }
+
         function sortArray(previous, next) {
             previous = previous.Region || previous.Name;
             next = next.Region || next.Name;
@@ -131,35 +164,47 @@ function openStores(event) {
         while (i) {
             i -= 1;
 
-            if (data[i].Region) {
+            if (data[i].Address) {
 
-                name = data[i].Region;
+                if (data[i].Region) {
 
-            } else {
+                    name = data[i].Region;
 
-                name = data[i].Name.split(" -")[0];
+                } else {
 
-            }
+                    name = data[i].Name.split(" -")[0];
 
-            name = name.trim();
+                }
 
-            if (lista[name]) {
+                name = name.trim();
 
-                lista[name].push(data[i]);
+                if (lista[name]) {
 
-            } else {
+                    lista[name].push(data[i]);
 
-                lista[name] = [data[i]];
-                lista.textContent += "<li>" + name + "</li>";
+                } else {
 
+                    lista[name] = [data[i]];
+                    lista.textContent += "<label for='lojas_" + name + "' >" +
+                                         "<li>" +
+                                         name +
+                                         //"<input type='checkbox' name='lojas_lista' id='lojas_" + name + "' onClick='subStores(this);'/>" +
+                                         "<input type='checkbox' name='lojas_lista' id='lojas_" + name + "'/>" +
+                                         "</li>" +
+                                         "</label>";
+
+                }
+            
             }
 
         }
 
         lista.innerHTML = lista.textContent;
         event.parentNode.appendChild(lista);
+        lista.addEventListener("click", subStores);
         //event.parentNode.classList.toggle("show");
         backMenu(lista);
+        window.list = lista;
 
     }
 
