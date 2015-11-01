@@ -103,31 +103,33 @@
 
 
             for (s = 0; s < store.length; s++) {
-                var latlng = new google.maps.LatLng(store[s][0], store[s][1]);
-                var contacts = "";
                 if (store[s][6] && store[s][6] != "" && store[s][6] != " ") {
-                    contacts = "<span class='sep'></span><p><b>Horário:</b> " + store[s][6] + "</p>";
+                    var latlng = new google.maps.LatLng(store[s][0], store[s][1]);
+                    var contacts = "";
+                    if (store[s][6] && store[s][6] != "" && store[s][6] != " ") {
+                        contacts = "<span class='sep'></span><p><b>Horário:</b> " + store[s][6] + "</p>";
+                    }
+                    if (store[s][4] && store[s][4] != "" && store[s][4] != " ") {
+                        contacts += "<span class='sep'></span><p><b>Telefone:</b> " + store[s][4] + "</p>";
+                    }
+                    if (store[s][5] && store[s][5] != "" && store[s][5] != " ") {
+                        contacts += "<p><b>Fax:</b> " + store[s][5] + "</p>";
+                    }
+                    var marker = new google.maps.Marker({
+                        position: latlng,
+                        title: store[s][2],
+                        map: map,
+                        icon: customMarker,
+                        zIndex: s,
+                        html: "<div id='map_content'><h3>" + store[s][2] + "</h3><p><b>Morada: </b>" + store[s][3] + "</p>" + contacts + "</div>"
+                    });
+                    google.maps.event.addListener(marker, "click", function() {
+                        infoWindow.setContent(this.html);
+                        infoWindow.open(map, this);
+                        //map.setCenter(this.getPosition());
+                    });
+                    gmarkers.push(marker);
                 }
-                if (store[s][4] && store[s][4] != "" && store[s][4] != " ") {
-                    contacts += "<span class='sep'></span><p><b>Telefone:</b> " + store[s][4] + "</p>";
-                }
-                if (store[s][5] && store[s][5] != "" && store[s][5] != " ") {
-                    contacts += "<p><b>Fax:</b> " + store[s][5] + "</p>";
-                }
-                var marker = new google.maps.Marker({
-                    position: latlng,
-                    title: store[s][2],
-                    map: map,
-                    icon: customMarker,
-                    zIndex: s,
-                    html: "<div id='map_content'><h3>" + store[s][2] + "</h3><p><b>Morada: </b>" + store[s][3] + "</p>" + contacts + "</div>"
-                });
-                google.maps.event.addListener(marker, "click", function() {
-                    infoWindow.setContent(this.html);
-                    infoWindow.open(map, this);
-                    //map.setCenter(this.getPosition());
-                });
-                gmarkers.push(marker);
             }
             getLocation();
         }

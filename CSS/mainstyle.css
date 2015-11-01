@@ -430,6 +430,7 @@ button, :focus, :active, ::-moz-focus-inner{
     line-height: 50px;
     text-align: left;
     text-indent: 10px;
+    width: 100%;
 }
 #lojas_lista ul{
     display: none;
