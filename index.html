@@ -62,8 +62,74 @@
             </div>
             <input type="radio" name="menu_lista" id="ativar_compras" class="compras"/>
             <div name="compras" class="middle_area_content">
-                <div>Lista de compras
+                <div class="area_simples">
+                    O seu saldo atual é 42.23 €
                 </div>
+<section id="container" class="container">
+    <div class="controls">
+        <fieldset class="input-group">
+            <button class="stop">Stop</button>
+        </fieldset>
+        <fieldset class="reader-config-group">
+            <label>
+                <span>Barcode-Type</span>
+                <select name="decoder_readers">
+                    <option value="code_128">Code 128</option>
+                    <option value="code_39">Code 39</option>
+                    <option value="code_39_vin">Code 39 VIN</option>
+                    <option value="ean" selected="selected">EAN</option>
+                    <option value="ean_8">EAN-8</option>
+                    <option value="upc">UPC</option>
+                    <option value="upc_e">UPC-E</option>
+                    <option value="codabar">Codabar</option>
+                    <option value="i2of5">I2of5</option>
+                </select>
+            </label>
+            <label>
+                <span>Resolution (long side)</span>
+                <select name="input-stream_constraints">
+                    <option value="320x240">320px</option>
+                    <option selected="selected" value="640x480">640px</option>
+                    <option value="800x600">800px</option>
+                    <option value="1280x720">1280px</option>
+                    <option value="1600x960">1600px</option>
+                    <option value="1920x1080">1920px</option>
+                </select>
+            </label>
+            <label>
+                <span>Patch-Size</span>
+                <select name="locator_patch-size">
+                    <option value="x-small">x-small</option>
+                    <option value="small">small</option>
+                    <option selected="selected" value="medium">medium</option>
+                    <option value="large">large</option>
+                    <option value="x-large">x-large</option>
+                </select>
+            </label>
+            <label>
+                <span>Half-Sample</span>
+                <input checked="checked" name="locator_half-sample" type="checkbox">
+            </label>
+            <label>
+                <span>Workers</span>
+                <select name="numOfWorkers">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option selected="selected" value="4">4</option>
+                    <option value="8">8</option>
+                </select>
+            </label>
+        </fieldset>
+    </div>
+    <div id="result_strip">
+        <ul class="thumbnails"></ul>
+    </div>
+    <div id="interactive" class="viewport"><video src="" preload="auto" autoplay="true"></video></div>
+</section>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://serratus.github.io/quaggaJS/examples/js/quagga.min.js" type="text/javascript"></script>
+<script src="http://serratus.github.io/quaggaJS/examples/live_w_locator.js" type="text/javascript"></script>
             </div>
             <input type="radio" name="menu_lista" id="ativar_produtos" class="produtos"/>
             <div name="produtos" class="middle_area_content">
@@ -77,13 +143,29 @@
             </div>
             <input type="radio" name="menu_lista" id="ativar_receitas" class="receitas"/>
             <div name="receitas" class="middle_area_content">
-                <div>Receitas
+                <div class="small_banner_vertical quadrado">
+                    <img data-src="Exemplos/receita1.jpg" src="Imagens/pixel.gif"/>
+                    <div class="banner_label">Lasanha de bacalhau com espinafres</div>
+                </div>
+                <div class="small_banner_vertical quadrado">
+                    <img data-src="Exemplos/receita2.jpg" src="Imagens/pixel.gif"/>
+                    <div class="banner_label">Mini Cheesecakes em frascos</div>
+                </div>
+                <div class="small_banner_vertical quadrado">
+                    <img data-src="Exemplos/receita3.jpg" src="Imagens/pixel.gif"/>
+                    <div class="banner_label">Smoothie de banana e framboesa</div>
+                </div>
+                <div class="small_banner_vertical quadrado">
+                    <img data-src="Exemplos/receita4.jpg" src="Imagens/pixel.gif"/>
+                    <div class="banner_label">Gelado de chocolate e avelã</div>
+                </div>
+                <div class="small_banner_vertical quadrado">
+                    <img data-src="Exemplos/receita5.jpg" src="Imagens/pixel.gif"/>
+                    <div class="banner_label">Hambúrguer de Frango</div>
                 </div>
             </div>
             <input type="radio" name="menu_lista" id="ativar_folhetos" class="folhetos"/>
             <div name="folhetos" class="middle_area_content">
-                <div>Folhetos
-                </div>
                 <div class="small_banner_vertical">
                     <img data-src="Exemplos/folheto1.jpg" src="Imagens/pixel.gif"/>
                     <div class="banner_label">Até 26 de Outubro</div>
