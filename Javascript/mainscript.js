@@ -123,6 +123,53 @@ function openStores(event) {
             var substore;
             var j;
 
+            function toggleStoreDetails(storedetails) {
+                var detailBox = document.getElementById("detalhes_lojas");
+                var info = storedetails.target.parentNode.details;
+                var details;
+
+                console.log(storedetails.target.parentNode.details);
+
+                if (!detailBox) {
+
+                    detailBox = document.createElement("div");
+                    detailBox.id = "detalhes_lojas";
+                    document.body.appendChild(detailBox);
+
+                }
+
+                detailBox.className = "";
+                details = "<h3>" + info.Name + "</h3>";
+
+                if (info.Address && info.Address != "" && info.Address != " ") {
+
+                    details += "<b>Morada:</b> " + info.Address;
+
+                }
+
+                if (info.OpeningAndClosingHourDescription && info.OpeningAndClosingHourDescription != "" && info.OpeningAndClosingHourDescription != " ") {
+
+                    details += "<span class='sep'></span><p><b>Horário:</b> " + info.OpeningAndClosingHourDescription + "</p>";
+
+                }
+
+                if (info.Telephone && info.Telephone != "" && info.Telephone != " ") {
+
+                    details += "<span class='sep'></span><p><b>Telefone:</b> " + info.Telephone + "</p>";
+
+                }
+
+                if (info.Fax && info.Fax != "" && info.Fax != " ") {
+
+                    details += "<p><b>Fax:</b> " + info.Fax + "</p>";
+
+                }
+
+                details += "<button onClick='this.parentNode.className = \"hide\";'></button>";
+                detailBox.innerHTML = details;
+
+            }
+
             //console.log(lista, store.target.textContent, lista[store.target.textContent]);
             if (stores) {
 
@@ -131,18 +178,19 @@ function openStores(event) {
                     j = stores.length;
 
                     subList = document.createElement("ul");
+                    subList.addEventListener("click", toggleStoreDetails);
 
                     while (j) {
                         j -= 1;
 
                         substore = document.createElement("li");
                         substore.details = stores[j];
-                        substore.textContent = stores[j].Name;
+                        substore.innerHTML = "<button>" + stores[j].Name + "</button>";
                         subList.appendChild(substore);
 
                     }
 
-                    store.target.appendChild(subList);
+                    store.target.parentNode.appendChild(subList);
 
                 }
 
@@ -185,16 +233,16 @@ function openStores(event) {
                 } else {
 
                     lista[name] = [data[i]];
-                    lista.textContent += "<label for='lojas_" + name + "' >" +
-                                         "<li>" +
+                    lista.textContent += "<li>" +
+                                         "<label for='lojas_" + name + "' >" +
                                          name +
                                          //"<input type='checkbox' name='lojas_lista' id='lojas_" + name + "' onClick='subStores(this);'/>" +
+                                         "</label>" +
                                          "<input type='checkbox' name='lojas_lista' id='lojas_" + name + "'/>" +
-                                         "</li>" +
-                                         "</label>";
+                                         "</li>";
 
                 }
-            
+
             }
 
         }
